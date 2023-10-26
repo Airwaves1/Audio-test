@@ -1,5 +1,6 @@
 #include "framelessWidget.h"
 #include "ui_framelessWidget.h"
+#include<QPainterPath>
 
 framelessWidget::framelessWidget(QWidget *parent)
     : QWidget(parent)
@@ -14,6 +15,9 @@ framelessWidget::framelessWidget(QWidget *parent)
     connect(t, &QTimer::timeout, this, [=](){Init();});
     t->setSingleShot(true);
     t->start(10);
+    this->resize(1600,900);
+    this->setAttribute(Qt::WA_TranslucentBackground);  //设置父窗口为透明
+
 
 
     connect(ui->Button_max, &QPushButton::clicked, this, [=]()  // 点击最大化按钮

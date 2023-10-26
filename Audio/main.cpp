@@ -2,12 +2,13 @@
 
 #include <QApplication>
 #include"qtmaterialautocomplete.h"
-
+#include"framelessWidget.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Widget w;
+    framelessWidget w;
+    w.setWindowFlag(Qt::FramelessWindowHint);
     w.show();
     return a.exec();
 }
