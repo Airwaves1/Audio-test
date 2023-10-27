@@ -17,6 +17,8 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <qtmaterialautocomplete.h>
+#include <qtmaterialraisedbutton.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -37,6 +39,8 @@ public:
     QPushButton *Button_max;
     QPushButton *Button_close;
     QWidget *mainDisplayWidget;
+    QtMaterialRaisedButton *pushButton;
+    QtMaterialAutoComplete *lineEdit;
 
     void setupUi(QWidget *framelessWidget)
     {
@@ -117,6 +121,12 @@ public:
         mainDisplayWidget->setObjectName(QString::fromUtf8("mainDisplayWidget"));
         mainDisplayWidget->setStyleSheet(QString::fromUtf8("#mainDisplayWidget{\n"
 "background-color: rgb(251, 251, 251);}"));
+        pushButton = new QtMaterialRaisedButton(mainDisplayWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(180, 270, 80, 24));
+        lineEdit = new QtMaterialAutoComplete(mainDisplayWidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(180, 140, 113, 23));
 
         mainLayout->addWidget(mainDisplayWidget);
 
@@ -144,6 +154,7 @@ public:
         Button_min->setText(QString());
         Button_max->setText(QString());
         Button_close->setText(QString());
+        pushButton->setText(QCoreApplication::translate("framelessWidget", "PushButton", nullptr));
     } // retranslateUi
 
 };

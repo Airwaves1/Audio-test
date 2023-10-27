@@ -18,8 +18,6 @@ framelessWidget::framelessWidget(QWidget *parent)
     this->resize(1600,900);
     this->setAttribute(Qt::WA_TranslucentBackground);  //设置父窗口为透明
 
-# hello
-
     connect(ui->Button_max, &QPushButton::clicked, this, [=]()  // 点击最大化按钮
     {
         controlWindowScale();

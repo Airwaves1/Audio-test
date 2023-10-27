@@ -201,6 +201,29 @@ QPushButton:pressed {background-color:#ab3b3a;border-radius:9px;}</string>
                <string notr="true">#mainDisplayWidget{
 background-color: rgb(251, 251, 251);}</string>
               </property>
+              <widget class="QPushButton" name="pushButton">
+               <property name="geometry">
+                <rect>
+                 <x>180</x>
+                 <y>270</y>
+                 <width>80</width>
+                 <height>24</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>PushButton</string>
+               </property>
+              </widget>
+              <widget class="QtMaterialAutoComplete" name="lineEdit">
+               <property name="geometry">
+                <rect>
+                 <x>180</x>
+                 <y>140</y>
+                 <width>113</width>
+                 <height>23</height>
+                </rect>
+               </property>
+              </widget>
              </widget>
             </item>
            </layout>
@@ -214,6 +237,13 @@ background-color: rgb(251, 251, 251);}</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtMaterialAutoComplete</class>
+   <extends>QLineEdit</extends>
+   <header location="global">qtmaterialautocomplete.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
