@@ -19,6 +19,11 @@ public:
     framelessWidget(QWidget *parent = nullptr);
     ~framelessWidget();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::framelessWidget *ui;
     int cornerRadius = 20;

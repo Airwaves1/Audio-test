@@ -6,15 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
-    <height>462</height>
+    <width>1300</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">*{
+	border:none;
+}
+QPushButton:hover {
+    border-color: #3498db; /* 鼠标悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: #d5eaf2; /* 按下按钮时的背景颜色，非常浅的蓝色 */
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -204,24 +213,115 @@ background-color: rgb(251, 251, 251);}</string>
               <widget class="QPushButton" name="pushButton">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
-                 <y>270</y>
-                 <width>80</width>
-                 <height>24</height>
+                 <x>30</x>
+                 <y>30</y>
+                 <width>50</width>
+                 <height>50</height>
                 </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	image: url(:/resource/image/user.png);
+    border-radius: 25px; /* 设置按钮为圆形，半径为按钮宽度的一半 */
+    width: 50px; /* 设置按钮的宽度 */
+    height: 50px; /* 设置按钮的高度 */
+
+    color: white; /* 设置文字颜色为白色 */
+    font-size: 16px; /* 设置文字大小 */
+    border: none; /* 去除按钮的边框 */
+}
+
+QPushButton:hover {
+    background-color: #d5eaf2; /* 按下按钮时的背景颜色，非常浅的蓝色 */
+}
+
+QPushButton:pressed {
+    background-color: #3498db; /* 按下按钮时的背景颜色，更深的蓝色 */
+}</string>
                </property>
                <property name="text">
-                <string>PushButton</string>
+                <string/>
                </property>
               </widget>
-              <widget class="QtMaterialAutoComplete" name="lineEdit">
+              <widget class="QPushButton" name="pushButton_2">
                <property name="geometry">
                 <rect>
-                 <x>180</x>
-                 <y>140</y>
-                 <width>113</width>
-                 <height>23</height>
+                 <x>780</x>
+                 <y>700</y>
+                 <width>50</width>
+                 <height>50</height>
                 </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/resource/image/pre.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="geometry">
+                <rect>
+                 <x>890</x>
+                 <y>700</y>
+                 <width>50</width>
+                 <height>50</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/resource/image/pause.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="geometry">
+                <rect>
+                 <x>1000</x>
+                 <y>700</y>
+                 <width>50</width>
+                 <height>50</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/resource/image/next.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_5">
+               <property name="geometry">
+                <rect>
+                 <x>650</x>
+                 <y>700</y>
+                 <width>50</width>
+                 <height>50</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/resource/image/dir.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_6">
+               <property name="geometry">
+                <rect>
+                 <x>1110</x>
+                 <y>700</y>
+                 <width>50</width>
+                 <height>50</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/resource/image/next.png);
+image: url(:/resource/image/volume.png);</string>
+               </property>
+               <property name="text">
+                <string/>
                </property>
               </widget>
              </widget>
@@ -237,13 +337,6 @@ background-color: rgb(251, 251, 251);}</string>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QtMaterialAutoComplete</class>
-   <extends>QLineEdit</extends>
-   <header location="global">qtmaterialautocomplete.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

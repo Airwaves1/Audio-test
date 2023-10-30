@@ -116,10 +116,14 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bluetooth.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_charts.pri \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_charts_private.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_concurrent.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_core.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_dbus.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_dbus_private.pri \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_designer.pri \
@@ -256,7 +260,8 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/qtmain.prl \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf \
+		../Audio/resource.qrc
 	$(QMAKE) -o Makefile ..\Audio\Audio.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/spec_pre.prf:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/qdevice.pri:
@@ -304,10 +309,14 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bluetooth.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_charts.pri:
+../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_charts_private.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_concurrent.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_core.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_core_private.pri:
+../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_datavisualization.pri:
+../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_dbus.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_dbus_private.pri:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/modules/qt_lib_designer.pri:
@@ -445,6 +454,7 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/qtmain.prl:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf:
+../Audio/resource.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Audio\Audio.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

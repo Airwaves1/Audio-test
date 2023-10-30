@@ -1,6 +1,7 @@
 #include "framelessWidget.h"
 #include "ui_framelessWidget.h"
 #include<QPainterPath>
+#include<QFileDialog>
 
 framelessWidget::framelessWidget(QWidget *parent)
     : QWidget(parent)
@@ -15,7 +16,6 @@ framelessWidget::framelessWidget(QWidget *parent)
     connect(t, &QTimer::timeout, this, [=](){Init();});
     t->setSingleShot(true);
     t->start(10);
-    this->resize(1600,900);
     this->setAttribute(Qt::WA_TranslucentBackground);  //设置父窗口为透明
 
     connect(ui->Button_max, &QPushButton::clicked, this, [=]()  // 点击最大化按钮
@@ -30,6 +30,7 @@ framelessWidget::framelessWidget(QWidget *parent)
     {
         this->close();
     });
+
 
 }
 
@@ -229,5 +230,17 @@ void framelessWidget::controlWindowScale(){
         maximized = false;
     }
 #endif
+}
+
+
+void framelessWidget::on_pushButton_clicked()
+{
+
+}
+
+
+void framelessWidget::on_pushButton_5_clicked()
+{
+     QFileDialog::getExistingDirectory(this,"选择文件","C:\\Users\\ly134\\Music");
 }
 

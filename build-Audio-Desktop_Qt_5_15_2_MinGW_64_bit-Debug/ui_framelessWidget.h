@@ -17,8 +17,6 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <qtmaterialautocomplete.h>
-#include <qtmaterialraisedbutton.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -39,15 +37,28 @@ public:
     QPushButton *Button_max;
     QPushButton *Button_close;
     QWidget *mainDisplayWidget;
-    QtMaterialRaisedButton *pushButton;
-    QtMaterialAutoComplete *lineEdit;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
 
     void setupUi(QWidget *framelessWidget)
     {
         if (framelessWidget->objectName().isEmpty())
             framelessWidget->setObjectName(QString::fromUtf8("framelessWidget"));
-        framelessWidget->resize(579, 462);
-        framelessWidget->setStyleSheet(QString::fromUtf8(""));
+        framelessWidget->resize(1300, 900);
+        framelessWidget->setStyleSheet(QString::fromUtf8("*{\n"
+"	border:none;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border-color: #3498db; /* \351\274\240\346\240\207\346\202\254\345\201\234\346\227\266\347\232\204\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d5eaf2; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\351\235\236\345\270\270\346\265\205\347\232\204\350\223\235\350\211\262 */\n"
+"}"));
         gridLayout_2 = new QGridLayout(framelessWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout = new QGridLayout();
@@ -121,12 +132,49 @@ public:
         mainDisplayWidget->setObjectName(QString::fromUtf8("mainDisplayWidget"));
         mainDisplayWidget->setStyleSheet(QString::fromUtf8("#mainDisplayWidget{\n"
 "background-color: rgb(251, 251, 251);}"));
-        pushButton = new QtMaterialRaisedButton(mainDisplayWidget);
+        pushButton = new QPushButton(mainDisplayWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(180, 270, 80, 24));
-        lineEdit = new QtMaterialAutoComplete(mainDisplayWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(180, 140, 113, 23));
+        pushButton->setGeometry(QRect(30, 30, 50, 50));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	image: url(:/resource/image/user.png);\n"
+"    border-radius: 25px; /* \350\256\276\347\275\256\346\214\211\351\222\256\344\270\272\345\234\206\345\275\242\357\274\214\345\215\212\345\276\204\344\270\272\346\214\211\351\222\256\345\256\275\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
+"    width: 50px; /* \350\256\276\347\275\256\346\214\211\351\222\256\347\232\204\345\256\275\345\272\246 */\n"
+"    height: 50px; /* \350\256\276\347\275\256\346\214\211\351\222\256\347\232\204\351\253\230\345\272\246 */\n"
+"\n"
+"    color: white; /* \350\256\276\347\275\256\346\226\207\345\255\227\351\242\234\350\211\262\344\270\272\347\231\275\350\211\262 */\n"
+"    font-size: 16px; /* \350\256\276\347\275\256\346\226\207\345\255\227\345\244\247\345\260\217 */\n"
+"    border: none; /* \345\216\273\351\231\244\346\214\211\351\222\256\347\232\204\350\276\271\346\241\206 */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #d5eaf2; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266"
+                        "\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\351\235\236\345\270\270\346\265\205\347\232\204\350\223\235\350\211\262 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #3498db; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\346\233\264\346\267\261\347\232\204\350\223\235\350\211\262 */\n"
+"}"));
+        pushButton_2 = new QPushButton(mainDisplayWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(780, 700, 50, 50));
+        pushButton_2->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pre.png);"));
+        pushButton_3 = new QPushButton(mainDisplayWidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(890, 700, 50, 50));
+        pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pause.png);"));
+        pushButton_4 = new QPushButton(mainDisplayWidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(1000, 700, 50, 50));
+        pushButton_4->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);"));
+        pushButton_5 = new QPushButton(mainDisplayWidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(650, 700, 50, 50));
+        pushButton_5->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/dir.png);"));
+        pushButton_6 = new QPushButton(mainDisplayWidget);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setGeometry(QRect(1110, 700, 50, 50));
+        pushButton_6->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);\n"
+"image: url(:/resource/image/volume.png);"));
 
         mainLayout->addWidget(mainDisplayWidget);
 
@@ -154,7 +202,12 @@ public:
         Button_min->setText(QString());
         Button_max->setText(QString());
         Button_close->setText(QString());
-        pushButton->setText(QCoreApplication::translate("framelessWidget", "PushButton", nullptr));
+        pushButton->setText(QString());
+        pushButton_2->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton_4->setText(QString());
+        pushButton_5->setText(QString());
+        pushButton_6->setText(QString());
     } // retranslateUi
 
 };
