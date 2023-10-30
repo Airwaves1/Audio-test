@@ -2,6 +2,8 @@
 #include "ui_framelessWidget.h"
 #include<QPainterPath>
 #include<QFileDialog>
+#include<QDir>
+#include<QStackedWidget>
 
 framelessWidget::framelessWidget(QWidget *parent)
     : QWidget(parent)
@@ -31,6 +33,14 @@ framelessWidget::framelessWidget(QWidget *parent)
         this->close();
     });
 
+
+    connect(ui->iflytek_pushButton, &QPushButton::clicked, [=](){
+        ui->stackedWidget->setCurrentIndex(0);
+    });
+
+    connect(ui->song_pushButton, &QPushButton::clicked, [=](){
+        ui->stackedWidget->setCurrentIndex(1);
+    });
 
 }
 
@@ -232,15 +242,13 @@ void framelessWidget::controlWindowScale(){
 #endif
 }
 
-
-void framelessWidget::on_pushButton_clicked()
+void framelessWidget::on_dir_pushButton_clicked()
 {
-
-}
-
-
-void framelessWidget::on_pushButton_5_clicked()
-{
-     QFileDialog::getExistingDirectory(this,"选择文件","C:\\Users\\ly134\\Music");
+    auto path = QFileDialog::getExistingDirectory(this,"选择文件","C:\\Users\\ly134\\Music");
+    //操作该目录下的文件
+    QDir dir(path);
+    auto musicList = dir.entryList(QStringList()<<"*.mp3"<<"*.wav",QDir::Files); //获取该目录下的mp3，wav格式的文件
+    qInfo()<<musicList;
+    ui->listWidget->addItems(musicList);
 }
 

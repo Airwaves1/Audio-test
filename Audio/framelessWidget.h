@@ -24,6 +24,14 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_iflytek_pushButton_clicked();
+
+    void on_iflytek_pushButton_clicked(bool checked);
+
+    void on_song_pushButton_clicked();
+
+    void on_dir_pushButton_clicked();
+
 private:
     Ui::framelessWidget *ui;
     int cornerRadius = 20;

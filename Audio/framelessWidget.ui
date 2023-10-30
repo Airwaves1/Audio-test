@@ -210,17 +210,247 @@ QPushButton:pressed {background-color:#ab3b3a;border-radius:9px;}</string>
                <string notr="true">#mainDisplayWidget{
 background-color: rgb(251, 251, 251);}</string>
               </property>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QWidget" name="main_widget" native="true">
                <property name="geometry">
                 <rect>
-                 <x>30</x>
-                 <y>30</y>
-                 <width>50</width>
-                 <height>50</height>
+                 <x>150</x>
+                 <y>70</y>
+                 <width>1071</width>
+                 <height>621</height>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">QPushButton {
+                <string notr="true"/>
+               </property>
+               <widget class="QStackedWidget" name="stackedWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>-50</x>
+                  <y>-10</y>
+                  <width>1071</width>
+                  <height>621</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="currentIndex">
+                 <number>1</number>
+                </property>
+                <widget class="QWidget" name="iflytekPage">
+                 <widget class="QLabel" name="label">
+                  <property name="geometry">
+                   <rect>
+                    <x>310</x>
+                    <y>140</y>
+                    <width>54</width>
+                    <height>16</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>page1</string>
+                  </property>
+                 </widget>
+                 <widget class="QtMaterialAutoComplete" name="lineEdit">
+                  <property name="geometry">
+                   <rect>
+                    <x>220</x>
+                    <y>350</y>
+                    <width>113</width>
+                    <height>23</height>
+                   </rect>
+                  </property>
+                  <property name="inputMask">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>李彩华是吉把</string>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="songPage">
+                 <widget class="QLabel" name="label_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>310</x>
+                    <y>180</y>
+                    <width>54</width>
+                    <height>16</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string>page2</string>
+                  </property>
+                 </widget>
+                 <widget class="QListWidget" name="listWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>380</x>
+                    <y>50</y>
+                    <width>281</width>
+                    <height>321</height>
+                   </rect>
+                  </property>
+                 </widget>
+                </widget>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="left_widget" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>-30</y>
+                 <width>151</width>
+                 <height>821</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <widget class="QPushButton" name="iflytek_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>-1</x>
+                  <y>170</y>
+                  <width>151</width>
+                  <height>24</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>星火</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="song_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>-1</x>
+                  <y>280</y>
+                  <width>151</width>
+                  <height>24</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>音乐</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="bottom_widget" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>690</y>
+                 <width>1071</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <widget class="QPushButton" name="dir_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>210</x>
+                  <y>20</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">image: url(:/resource/image/dir.png);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="play_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>450</x>
+                  <y>20</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">image: url(:/resource/image/pause.png);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pre_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>340</x>
+                  <y>20</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">image: url(:/resource/image/pre.png);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="next_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>560</x>
+                  <y>20</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">image: url(:/resource/image/next.png);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="volume_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>670</x>
+                  <y>20</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">image: url(:/resource/image/next.png);
+image: url(:/resource/image/volume.png);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="top_widget" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>150</x>
+                 <y>0</y>
+                 <width>1071</width>
+                 <height>71</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 0);</string>
+               </property>
+               <widget class="QPushButton" name="user_pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>10</y>
+                  <width>50</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	image: url(:/resource/image/user.png);
     border-radius: 25px; /* 设置按钮为圆形，半径为按钮宽度的一半 */
     width: 50px; /* 设置按钮的宽度 */
@@ -238,91 +468,11 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: #3498db; /* 按下按钮时的背景颜色，更深的蓝色 */
 }</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="geometry">
-                <rect>
-                 <x>780</x>
-                 <y>700</y>
-                 <width>50</width>
-                 <height>50</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/resource/image/pre.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="pushButton_3">
-               <property name="geometry">
-                <rect>
-                 <x>890</x>
-                 <y>700</y>
-                 <width>50</width>
-                 <height>50</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/resource/image/pause.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="pushButton_4">
-               <property name="geometry">
-                <rect>
-                 <x>1000</x>
-                 <y>700</y>
-                 <width>50</width>
-                 <height>50</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/resource/image/next.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="pushButton_5">
-               <property name="geometry">
-                <rect>
-                 <x>650</x>
-                 <y>700</y>
-                 <width>50</width>
-                 <height>50</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/resource/image/dir.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="pushButton_6">
-               <property name="geometry">
-                <rect>
-                 <x>1110</x>
-                 <y>700</y>
-                 <width>50</width>
-                 <height>50</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/resource/image/next.png);
-image: url(:/resource/image/volume.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
               </widget>
              </widget>
             </item>
@@ -337,6 +487,13 @@ image: url(:/resource/image/volume.png);</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtMaterialAutoComplete</class>
+   <extends>QLineEdit</extends>
+   <header location="global">qtmaterialautocomplete.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
