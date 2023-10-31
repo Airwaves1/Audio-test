@@ -7,4 +7,5 @@ debug/widget.o
 debug/qrc_resource.o
 debug/moc_framelessWidget.o
 debug/moc_multimedia.o
+debug/moc_recognizer.o
 debug/moc_widget.o

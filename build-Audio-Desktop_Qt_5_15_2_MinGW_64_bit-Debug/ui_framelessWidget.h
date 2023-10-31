@@ -18,6 +18,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <qtmaterialflatbutton.h>
@@ -47,6 +48,7 @@ public:
     QWidget *iflytekPage;
     QLabel *label;
     QtMaterialFlatButton *record_pushButton;
+    QTextEdit *iat_result;
     QWidget *songPage;
     QLabel *label_2;
     QListWidget *listWidget;
@@ -177,6 +179,9 @@ public:
 "}\n"
 "\n"
 ""));
+        iat_result = new QTextEdit(iflytekPage);
+        iat_result->setObjectName(QString::fromUtf8("iat_result"));
+        iat_result->setGeometry(QRect(360, 110, 351, 321));
         stackedWidget->addWidget(iflytekPage);
         songPage = new QWidget();
         songPage->setObjectName(QString::fromUtf8("songPage"));

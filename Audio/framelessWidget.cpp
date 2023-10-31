@@ -26,6 +26,7 @@ framelessWidget::framelessWidget(QWidget *parent)
     ui->record_pushButton->setRole(Material::Secondary);
 
     multimedia = new Multimedia(this);
+    m_recognizer = new recognizer();
 
 
     connect(ui->Button_max, &QPushButton::clicked, this, [=]()  // 点击最大化按钮
@@ -278,5 +279,11 @@ void framelessWidget::on_record_pushButton_released()
     ui->record_pushButton->setHaloVisible(false);
     qDebug()<<"stop record";
     multimedia->stopRecord();
+
+    //开始识别
+    QString res;
+    res = m_recognizer->runIAT("C:/Code/Qt/Audio/Audio/record/output.wav");
+    qDebug() << "识别结果：" << res;
+    ui->iat_result->setText(res);
 }
 

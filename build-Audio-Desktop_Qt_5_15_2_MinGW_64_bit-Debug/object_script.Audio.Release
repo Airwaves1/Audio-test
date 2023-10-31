@@ -7,4 +7,5 @@ release/widget.o
 release/qrc_resource.o
 release/moc_framelessWidget.o
 release/moc_multimedia.o
+release/moc_recognizer.o
 release/moc_widget.o

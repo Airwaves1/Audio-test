@@ -21,6 +21,10 @@ INCLUDEPATH +=$$PWD/libs/include
 # iflytek SDK
 LIBS += $$PWD/iflytek_SDK/libs/msc.lib
 LIBS += $$PWD/iflytek_SDK/libs/msc_x64.lib
+# 加载动态库
+LIBS += -L$$PWD/iflytek_SDK/bin -lmsc_x64
+
+
 INCLUDEPATH +=$$PWD/iflytek_SDK/include
 
 
@@ -50,3 +54,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resource.qrc
+

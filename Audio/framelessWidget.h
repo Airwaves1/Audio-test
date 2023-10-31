@@ -7,6 +7,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QDebug>
 #include"multimedia.h"
+#include"recognizer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class framelessWidget; }
@@ -72,7 +73,7 @@ private:
 
 private:
     Multimedia* multimedia; //创建多媒体对象
-
+    recognizer* m_recognizer; //创建语音识别对象
 
 
 };
