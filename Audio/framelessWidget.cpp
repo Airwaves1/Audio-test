@@ -4,7 +4,7 @@
 #include<QFileDialog>
 #include<QDir>
 #include<QStackedWidget>
-
+#include"iflytek.h"
 
 
 framelessWidget::framelessWidget(QWidget *parent)
@@ -41,6 +41,12 @@ framelessWidget::framelessWidget(QWidget *parent)
     {
         this->close();
     });
+
+
+    connect(this,&framelessWidget::recognize_finished,this,&framelessWidget::talk_to_spark);
+    //connect(this,&framelessWidget::recognize_finished,this,&framelessWidget::do_tts);
+    connect(this,&framelessWidget::spark_finished,this,&framelessWidget::do_tts);
+
 
 
 }
@@ -285,5 +291,57 @@ void framelessWidget::on_record_pushButton_released()
     res = m_recognizer->runIAT("C:/Code/Qt/Audio/Audio/record/output.wav");
     qDebug() << "识别结果：" << res;
     ui->iat_result->setText(res);
+
+    emit recognize_finished();
 }
+
+void framelessWidget::do_tts()
+{
+//    QString iflytek_result = ui->iflytek->toPlainText();
+//    QString path = "C:/Code/Qt/Audio/Audio/iflytek_SDK/iflytek_voice.wav";
+//    m_recognizer->tts(&iflytek_result,&path);
+
+    QString tts_text = ui->iflytek->toPlainText();
+    QByteArray utf8Data = tts_text.toLocal8Bit();
+    //QTextCodec* codec = QTextCodec::codecForName("GB2312");
+    //QByteArray gb2312Data = codec->fromUnicode(utf8Data);
+    const char* src_text = utf8Data.constData();
+
+    int tts_bool = m_recognizer->tts(src_text, "C:/Code/Qt/Audio/Audio/record/iflytek_voice.wav");
+
+    qDebug() << "语音合成内容为！"<< tts_text;
+    qDebug() << "语音合成内容为！"<< tts_text.toStdString().c_str();
+
+    qDebug()<< "语音合成内容为！"<< tts_bool;
+    if (tts_bool == 0)
+    {
+        qDebug() << "语音合成成功！";
+    }
+    else
+    {
+        qDebug() << "语音合成失败！";
+    }
+
+    QString path = "C:/Code/Qt/Audio/Audio/record/iflytek_voice.wav";
+    multimedia->play(path);
+}
+
+void framelessWidget::talk_to_spark()
+{
+    iflytek *thread = new iflytek();
+    thread->userInput = ui->iat_result->toPlainText();
+    connect(thread, &iflytek::processFinished, this, &framelessWidget::onProcessFinished);
+    thread->start();
+}
+
+void framelessWidget::onProcessFinished(const QString &input, const QString &output)
+{
+    ui->iflytek->setText(output);
+
+    // 在Qt中输出Python的返回消息
+    qDebug() << "User Input: " << input;
+    qDebug() << "Python Output: " << output;
+    emit spark_finished();
+}
+
 

@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QAudioInput>
 #include <QBuffer>
+#include<QAudioOutput>
+#include<QMediaPlayer>
+
 
 class Multimedia : public QObject
 {
@@ -17,10 +20,16 @@ public slots:
     void startRecord();
     void stopRecord();
 
+    void play(const QString& file);
+
 private:
     QAudioFormat audioFormat;
     QAudioInput* audioInput;
     QBuffer* buffer;
+
+    //QAudioOutput* audioOutput;
+    QMediaPlayer* player;
+
 };
 
 #endif // MULTIMEDIA_H

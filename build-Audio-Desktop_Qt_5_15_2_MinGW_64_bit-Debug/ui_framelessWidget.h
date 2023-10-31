@@ -21,6 +21,7 @@
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <colorchangingtextedit.h>
 #include <qtmaterialflatbutton.h>
 #include <qtmaterialslider.h>
 
@@ -46,9 +47,9 @@ public:
     QWidget *main_widget;
     QStackedWidget *stackedWidget;
     QWidget *iflytekPage;
-    QLabel *label;
     QtMaterialFlatButton *record_pushButton;
-    QTextEdit *iat_result;
+    ColorChangingTextEdit *iat_result;
+    QTextEdit *iflytek;
     QWidget *songPage;
     QLabel *label_2;
     QListWidget *listWidget;
@@ -156,12 +157,9 @@ public:
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         iflytekPage = new QWidget();
         iflytekPage->setObjectName(QString::fromUtf8("iflytekPage"));
-        label = new QLabel(iflytekPage);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(310, 140, 54, 16));
         record_pushButton = new QtMaterialFlatButton(iflytekPage);
         record_pushButton->setObjectName(QString::fromUtf8("record_pushButton"));
-        record_pushButton->setGeometry(QRect(420, 450, 100, 100));
+        record_pushButton->setGeometry(QRect(480, 500, 100, 100));
         record_pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 30px; /* \345\234\206\345\275\242\346\214\211\351\222\256\357\274\214\345\215\212\345\276\204\344\270\272\346\214\211\351\222\256\345\256\275\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
 "    width: 60px; /* \346\214\211\351\222\256\345\256\275\345\272\246 */\n"
@@ -179,9 +177,64 @@ public:
 "}\n"
 "\n"
 ""));
-        iat_result = new QTextEdit(iflytekPage);
+        iat_result = new ColorChangingTextEdit(iflytekPage);
         iat_result->setObjectName(QString::fromUtf8("iat_result"));
-        iat_result->setGeometry(QRect(360, 110, 351, 321));
+        iat_result->setGeometry(QRect(250, 400, 571, 91));
+        iflytek = new QTextEdit(iflytekPage);
+        iflytek->setObjectName(QString::fromUtf8("iflytek"));
+        iflytek->setGeometry(QRect(250, 70, 571, 281));
+        iflytek->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
+"    background-color: #f7f7f7; /* \350\203\214\346\231\257\351\242\234\350\211\262 */\n"
+"    border: 2px solid #4CAF50; /* \350\276\271\346\241\206 */\n"
+"    padding: 10px; /* \345\206\205\350\276\271\350\267\235 */\n"
+"    color: #333; /* \346\226\207\345\255\227\351\242\234\350\211\262 */\n"
+"    font-family: Arial, sans-serif; /* \345\255\227\344\275\223 */\n"
+"    font-size: 14px; /* \345\255\227\344\275\223\345\244\247\345\260\217 */\n"
+"    border-radius: 5px; /* \350\276\271\346\241\206\345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border: 2px solid #2196F3; /* \350\216\267\345\217\226\347\204\246\347\202\271\346\227\266\347\232\204\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"}\n"
+"\n"
+"QTextEdit::placeholder {\n"
+"    color: #999; /* \345\215\240\344\275\215\347\254\246\346\226\207\345\255\227\351\242\234\350\211\262 */\n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    width: 10px; /* \347\253\226\347\233\264\346\273\232\345\212\250\346\235\241\345\256\275\345"
+                        "\272\246 */\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #4CAF50; /* \346\273\232\345\212\250\346\235\241\346\214\211\351\222\256\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
+"    border-radius: 5px; /* \346\214\211\351\222\256\345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical,\n"
+"QScrollBar::sub-line:vertical,\n"
+"QScrollBar::add-page:vertical,\n"
+"QScrollBar::sub-page:vertical {\n"
+"    background: none; /* \346\273\232\345\212\250\346\235\241\347\256\255\345\244\264\345\222\214\346\273\232\345\212\250\346\235\241\350\203\214\346\231\257\346\240\267\345\274\217 */\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    height: 10px; /* \346\260\264\345\271\263\346\273\232\345\212\250\346\235\241\351\253\230\345\272\246 */\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background-color: #4CAF50; /* \346\260\264\345\271\263\346\273\232\345\212\250\346\235\241\346\214\211\351\222\256\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
+"    border-radius"
+                        ": 5px; /* \346\214\211\351\222\256\345\234\206\350\247\222 */\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal,\n"
+"QScrollBar::sub-line:horizontal,\n"
+"QScrollBar::add-page:horizontal,\n"
+"QScrollBar::sub-page:horizontal {\n"
+"    background: none; /* \346\273\232\345\212\250\346\235\241\347\256\255\345\244\264\345\222\214\346\273\232\345\212\250\346\235\241\350\203\214\346\231\257\346\240\267\345\274\217 */\n"
+"}\n"
+""));
         stackedWidget->addWidget(iflytekPage);
         songPage = new QWidget();
         songPage->setObjectName(QString::fromUtf8("songPage"));
@@ -304,7 +357,6 @@ public:
 #if QT_CONFIG(whatsthis)
         stackedWidget->setWhatsThis(QCoreApplication::translate("framelessWidget", "waht", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        label->setText(QCoreApplication::translate("framelessWidget", "page1", nullptr));
         record_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\214\211\344\275\217\350\257\264\350\257\235", nullptr));
         label_2->setText(QCoreApplication::translate("framelessWidget", "page2", nullptr));
         iflytek_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\230\237\347\201\253", nullptr));

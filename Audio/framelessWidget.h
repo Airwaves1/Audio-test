@@ -34,6 +34,19 @@ private slots:
 
     void on_record_pushButton_released();
 
+    void do_tts();
+
+    void talk_to_spark();
+
+    void onProcessFinished(const QString &input, const QString &output);
+
+signals:
+    void recognize_finished();
+    void spark_finished();
+
+
+
+
 private:
     Ui::framelessWidget *ui;
     int cornerRadius = 20;

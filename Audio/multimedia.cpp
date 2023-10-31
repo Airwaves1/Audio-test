@@ -16,6 +16,14 @@ Multimedia::Multimedia(QObject *parent) : QObject(parent)
     audioInput = new QAudioInput(audioFormat, this);
     buffer = new QBuffer(this);
     buffer->setData(QByteArray());
+
+
+    //audioOutput = new QAudioOutput();
+    player = new QMediaPlayer();
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ly134/Music/ikun.mp3")); // 替换为你的歌曲文件路径
+
+    player->setVolume(100); // 设置音量（0-100之间）
+    //player->play(); // 播放音乐
 }
 
 Multimedia::~Multimedia()
@@ -63,4 +71,31 @@ void Multimedia::stopRecord()
     }
 
     buffer->setData(QByteArray()); // 清空缓冲区
+}
+
+void Multimedia::play(const QString& m_file)
+{
+    QString filePath = m_file; // 指定播放的文件路径
+    QFile file(filePath);
+    if (file.open(QIODevice::ReadOnly)) {
+        QByteArray header = file.read(44);
+        QByteArray data = file.readAll();
+        file.close();
+
+        QAudioFormat format;
+        format.setSampleRate(16000);
+        format.setSampleSize(16);
+        format.setChannelCount(1);
+        format.setCodec("audio/pcm");
+        format.setByteOrder(QAudioFormat::LittleEndian);
+        format.setSampleType(QAudioFormat::SignedInt);
+
+        QAudioOutput* audioOutput = new QAudioOutput(format, this);
+        QBuffer* buffer = new QBuffer(this);
+        buffer->setData(data);
+        buffer->open(QIODevice::ReadOnly);
+        audioOutput->start(buffer);
+    } else {
+        qDebug() << "Failed to open audio file!";
+    }
 }

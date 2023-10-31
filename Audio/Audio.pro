@@ -30,13 +30,13 @@ INCLUDEPATH +=$$PWD/iflytek_SDK/include
 
 SOURCES += \
     framelessWidget.cpp \
-    iflytek.cpp \
     main.cpp \
     multimedia.cpp \
     recognizer.cpp \
     widget.cpp
 
 HEADERS += \
+    colorchangingtextedit.h \
     framelessWidget.h \
     iflytek.h \
     multimedia.h \
