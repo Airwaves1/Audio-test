@@ -2,6 +2,9 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QT += multimedia
+
+
 CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -14,13 +17,26 @@ CONFIG += c++17
 LIBS += $$PWD/libs/libcomponents.a
 INCLUDEPATH +=$$PWD/libs/include
 
+
+# iflytek SDK
+LIBS += $$PWD/iflytek_SDK/libs/msc.lib
+LIBS += $$PWD/iflytek_SDK/libs/msc_x64.lib
+INCLUDEPATH +=$$PWD/iflytek_SDK/include
+
+
 SOURCES += \
     framelessWidget.cpp \
+    iflytek.cpp \
     main.cpp \
+    multimedia.cpp \
+    recognizer.cpp \
     widget.cpp
 
 HEADERS += \
     framelessWidget.h \
+    iflytek.h \
+    multimedia.h \
+    recognizer.h \
     widget.h
 
 FORMS += \

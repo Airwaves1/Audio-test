@@ -20,7 +20,8 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <qtmaterialautocomplete.h>
+#include <qtmaterialflatbutton.h>
+#include <qtmaterialslider.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -45,7 +46,7 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *iflytekPage;
     QLabel *label;
-    QtMaterialAutoComplete *lineEdit;
+    QtMaterialFlatButton *record_pushButton;
     QWidget *songPage;
     QLabel *label_2;
     QListWidget *listWidget;
@@ -58,6 +59,8 @@ public:
     QPushButton *pre_pushButton;
     QPushButton *next_pushButton;
     QPushButton *volume_pushButton;
+    QtMaterialSlider *horizontalSlider;
+    QtMaterialSlider *horizontalSlider_2;
     QWidget *top_widget;
     QPushButton *user_pushButton;
 
@@ -65,17 +68,9 @@ public:
     {
         if (framelessWidget->objectName().isEmpty())
             framelessWidget->setObjectName(QString::fromUtf8("framelessWidget"));
+        framelessWidget->setWindowModality(Qt::WindowModal);
         framelessWidget->resize(1300, 900);
-        framelessWidget->setStyleSheet(QString::fromUtf8("*{\n"
-"	border:none;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    border-color: #3498db; /* \351\274\240\346\240\207\346\202\254\345\201\234\346\227\266\347\232\204\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #d5eaf2; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\351\235\236\345\270\270\346\265\205\347\232\204\350\223\235\350\211\262 */\n"
-"}"));
+        framelessWidget->setStyleSheet(QString::fromUtf8(""));
         gridLayout_2 = new QGridLayout(framelessWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout = new QGridLayout();
@@ -155,16 +150,33 @@ public:
         main_widget->setStyleSheet(QString::fromUtf8(""));
         stackedWidget = new QStackedWidget(main_widget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(-50, -10, 1071, 621));
+        stackedWidget->setGeometry(QRect(-50, 0, 1121, 621));
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         iflytekPage = new QWidget();
         iflytekPage->setObjectName(QString::fromUtf8("iflytekPage"));
         label = new QLabel(iflytekPage);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(310, 140, 54, 16));
-        lineEdit = new QtMaterialAutoComplete(iflytekPage);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(220, 350, 113, 23));
+        record_pushButton = new QtMaterialFlatButton(iflytekPage);
+        record_pushButton->setObjectName(QString::fromUtf8("record_pushButton"));
+        record_pushButton->setGeometry(QRect(420, 450, 100, 100));
+        record_pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    border-radius: 30px; /* \345\234\206\345\275\242\346\214\211\351\222\256\357\274\214\345\215\212\345\276\204\344\270\272\346\214\211\351\222\256\345\256\275\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
+"    width: 60px; /* \346\214\211\351\222\256\345\256\275\345\272\246 */\n"
+"    height: 60px; /* \346\214\211\351\222\256\351\253\230\345\272\246 */\n"
+"    background-color: #3498db; /* \346\214\211\351\222\256\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\345\217\257\344\273\245\346\240\271\346\215\256\351\234\200\350\246\201\344\277\256\346\224\271 */\n"
+"    color: white; /* \346\226\207\345\255\227\351\242\234\350\211\262 */\n"
+"    font-size: 16px; /* \346\226\207\345\255\227\345\244\247\345\260\217 */\n"
+"    border: none; /* \346\227\240\350\276\271\346\241\206 */\n"
+"    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* \346\214\211\351\222\256\346\214\211\344\270\213\346\227\266\347\232\204\351\230\264\345\275\261\346\225\210\346\236\234 */\n"
+"}\n"
+""
+                        "\n"
+"QPushButton:pressed {\n"
+"    box-shadow: none; /* \345\216\273\351\231\244\346\214\211\344\270\213\346\227\266\347\232\204\351\230\264\345\275\261\346\225\210\346\236\234 */\n"
+"}\n"
+"\n"
+""));
         stackedWidget->addWidget(iflytekPage);
         songPage = new QWidget();
         songPage->setObjectName(QString::fromUtf8("songPage"));
@@ -188,28 +200,46 @@ public:
         bottom_widget = new QWidget(mainDisplayWidget);
         bottom_widget->setObjectName(QString::fromUtf8("bottom_widget"));
         bottom_widget->setGeometry(QRect(150, 690, 1071, 101));
-        bottom_widget->setStyleSheet(QString::fromUtf8(""));
+        bottom_widget->setStyleSheet(QString::fromUtf8("*{\n"
+"    border:none\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border-color: #3498db; /* \351\274\240\346\240\207\346\202\254\345\201\234\346\227\266\347\232\204\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #d5eaf2; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\351\235\236\345\270\270\346\265\205\347\232\204\350\223\235\350\211\262 */\n"
+"}"));
         dir_pushButton = new QPushButton(bottom_widget);
         dir_pushButton->setObjectName(QString::fromUtf8("dir_pushButton"));
-        dir_pushButton->setGeometry(QRect(210, 20, 50, 50));
+        dir_pushButton->setGeometry(QRect(200, 30, 50, 50));
         dir_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/dir.png);"));
         play_pushButton = new QPushButton(bottom_widget);
         play_pushButton->setObjectName(QString::fromUtf8("play_pushButton"));
-        play_pushButton->setGeometry(QRect(450, 20, 50, 50));
+        play_pushButton->setGeometry(QRect(440, 30, 60, 50));
         play_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pause.png);"));
         pre_pushButton = new QPushButton(bottom_widget);
         pre_pushButton->setObjectName(QString::fromUtf8("pre_pushButton"));
-        pre_pushButton->setGeometry(QRect(340, 20, 50, 50));
+        pre_pushButton->setGeometry(QRect(330, 30, 50, 50));
         pre_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pre.png);"));
         next_pushButton = new QPushButton(bottom_widget);
         next_pushButton->setObjectName(QString::fromUtf8("next_pushButton"));
-        next_pushButton->setGeometry(QRect(560, 20, 50, 50));
+        next_pushButton->setGeometry(QRect(550, 30, 50, 50));
         next_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);"));
         volume_pushButton = new QPushButton(bottom_widget);
         volume_pushButton->setObjectName(QString::fromUtf8("volume_pushButton"));
-        volume_pushButton->setGeometry(QRect(670, 20, 50, 50));
+        volume_pushButton->setGeometry(QRect(660, 30, 50, 50));
         volume_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);\n"
 "image: url(:/resource/image/volume.png);"));
+        horizontalSlider = new QtMaterialSlider(bottom_widget);
+        horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
+        horizontalSlider->setGeometry(QRect(0, 0, 1061, 31));
+        horizontalSlider->setOrientation(Qt::Horizontal);
+        horizontalSlider_2 = new QtMaterialSlider(bottom_widget);
+        horizontalSlider_2->setObjectName(QString::fromUtf8("horizontalSlider_2"));
+        horizontalSlider_2->setGeometry(QRect(700, 50, 121, 16));
+        horizontalSlider_2->setOrientation(Qt::Horizontal);
         top_widget = new QWidget(mainDisplayWidget);
         top_widget->setObjectName(QString::fromUtf8("top_widget"));
         top_widget->setGeometry(QRect(150, 0, 1071, 71));
@@ -254,7 +284,7 @@ public:
 
         retranslateUi(framelessWidget);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(framelessWidget);
@@ -266,9 +296,11 @@ public:
         Button_min->setText(QString());
         Button_max->setText(QString());
         Button_close->setText(QString());
+#if QT_CONFIG(whatsthis)
+        stackedWidget->setWhatsThis(QCoreApplication::translate("framelessWidget", "waht", nullptr));
+#endif // QT_CONFIG(whatsthis)
         label->setText(QCoreApplication::translate("framelessWidget", "page1", nullptr));
-        lineEdit->setInputMask(QString());
-        lineEdit->setPlaceholderText(QCoreApplication::translate("framelessWidget", "\346\235\216\345\275\251\345\215\216\346\230\257\345\220\211\346\212\212", nullptr));
+        record_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\214\211\344\275\217\350\257\264\350\257\235", nullptr));
         label_2->setText(QCoreApplication::translate("framelessWidget", "page2", nullptr));
         iflytek_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\230\237\347\201\253", nullptr));
         song_pushButton->setText(QCoreApplication::translate("framelessWidget", "\351\237\263\344\271\220", nullptr));

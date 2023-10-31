@@ -6,6 +6,7 @@
 #include <QMouseEvent>
 #include <QGraphicsDropShadowEffect>
 #include <QDebug>
+#include"multimedia.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class framelessWidget; }
@@ -20,17 +21,17 @@ public:
     ~framelessWidget();
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_5_clicked();
 
     void on_iflytek_pushButton_clicked();
-
-    void on_iflytek_pushButton_clicked(bool checked);
 
     void on_song_pushButton_clicked();
 
     void on_dir_pushButton_clicked();
+
+    void on_record_pushButton_pressed();
+
+    void on_record_pushButton_released();
 
 private:
     Ui::framelessWidget *ui;
@@ -67,5 +68,12 @@ private:
 
     QRect lastGeometry;
     void controlWindowScale();
+
+
+private:
+    Multimedia* multimedia; //创建多媒体对象
+
+
+
 };
 #endif // _FRAMELESSWIDGET_H

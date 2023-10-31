@@ -1,0 +1,471 @@
+============================================================
+Time  2023/10/19 23:23:07 391 
+============================================================
+[2023/10/19 23:23:07 391] isr_1conn  2226 SYS_MSG_LOAD_CLOUD  
+[2023/10/19 23:23:07 392] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   msp_status_cb  param1 =  func(6500ae80) 
+[2023/10/19 23:23:07 394] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_rslt_cb  param1 =  func(6500a5c0) 
+[2023/10/19 23:23:07 394] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_err_cb  param1 =  func(6500aef0) 
+[2023/10/19 23:23:07 398] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_status_cb  param1 =  func(6500ada0) 
+[2023/10/19 23:23:07 398] isr_1conn  1411 onesoc  
+[2023/10/19 23:23:07 398] isr_1conn  1412 ASR_CLOUD_MSG_SSB  
+[2023/10/19 23:23:07 400] isr_1conn  1427 isr_1conn  cloud_cisr1P1HHBHIBrOcXeS4Uaa1VvCBkWg+HbK  268436457  1552357601  
+[2023/10/19 23:23:07 401] isr_1conn  1497 req_lgi_id =  nil  
+[2023/10/19 23:23:07 401] isr_1conn  1498 not login!  
+[2023/10/19 23:23:07 420] isr_1conn  1631 nil  
+[2023/10/19 23:23:07 421] isr_1conn  1697 speex-wb  
+[2023/10/19 23:23:07 421] isr_1conn  1785 net_once_bytes  nil  
+[2023/10/19 23:23:07 421] isr_1conn  1790 need_encode  true  
+[2023/10/19 23:23:07 421] isr_1conn  1792 once bytes  122  
+[2023/10/19 23:23:07 424] isr_1conn  1816 User set url is   nil  
+[2023/10/19 23:23:07 426] config     91   select default  
+[2023/10/19 23:23:07 426] config     113  use general cloud  
+[2023/10/19 23:23:07 426] transport  645  paramkvsport is   nil  
+[2023/10/19 23:23:07 426] transport  657  ns_enable=  1  
+[2023/10/19 23:23:07 426] transport  659  2017-08--24 is_ns_need_close =   nil  
+[2023/10/19 23:23:07 427] transport  665  net.nettype=  unknown  
+[2023/10/19 23:23:07 427] transport  675  url.full=  nil  
+[2023/10/19 23:23:07 427] transport  680  server_url_host=, server_url_port=, server_url_path=  open.xf-yun.com  nil  /msp.do  
+[2023/10/19 23:23:07 427] transport  907  net type:  unknown  
+[2023/10/19 23:23:07 427] transport  908  net operator:  def  
+[2023/10/19 23:23:07 427] transport  909  use proxy:  false  
+[2023/10/19 23:23:07 427] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:07 428] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:07 428] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:07 428] transport  1179 try preferred port:  nil  
+[2023/10/19 23:23:07 428] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:07 430] transport  1086 name =   iat  
+[2023/10/19 23:23:07 430] ns         634  ntt=  unknown  
+[2023/10/19 23:23:07 433] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:07 434] ns         582  name server start  
+[2023/10/19 23:23:07 434] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:07 434] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:07 436] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:07 436] ns         555  net_type =  standard  
+[2023/10/19 23:23:07 436] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:07 436] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:07 436] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:07 437] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:07 437] network    263  gethostbyname  hdns.xf-yun.com  ns1  
+[2023/10/19 23:23:07 486] network    245  dns resp  10214  ns1  
+[2023/10/19 23:23:07 486] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:07 487] network    445  gethttpresp2  117.121.48.5  80  ns2  
+[2023/10/19 23:23:07 489] network    465  prot_type  tcp  
+[2023/10/19 23:23:07 496] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:07 496] transport  77   dns_failed  
+[2023/10/19 23:23:07 496] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:07 496] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:07 497] transport  1304 [soc] connect   42.62.116.18  1028  
+[2023/10/19 23:23:07 499] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:07 503] network    418  soc error  10202  ns2  
+[2023/10/19 23:23:07 505] ns         253  name server http resp  10202  
+[2023/10/19 23:23:07 506] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:07 506] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:07 506] ns         116  use default ip  
+[2023/10/19 23:23:07 506] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:07 506] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:07 506] ns         670  no data in ns_q  
+[2023/10/19 23:23:07 506] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:07 509] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:07 509] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:07 509] transport  342  soc_conn_failed  
+[2023/10/19 23:23:07 509] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:07 513] transport  416  switch 80  
+[2023/10/19 23:23:07 516] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:07 743] isr_1conn  262  netperf:  95  
+[2023/10/19 23:23:07 796] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  1  
+[2023/10/19 23:23:07 798] isr_1conn  1860     
+[2023/10/19 23:23:07 997] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:08 069] isr_1conn  262  netperf:  88  
+[2023/10/19 23:23:08 197] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:08 384] isr_1conn  262  netperf:  76  
+[2023/10/19 23:23:08 398] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:08 523] transport  330  soc_10202_wait  
+[2023/10/19 23:23:08 523] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:08 525] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:08 529] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:08 529] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:08 529] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:08 530] transport  1086 name =   iat  
+[2023/10/19 23:23:08 530] ns         634  ntt=  unknown  
+[2023/10/19 23:23:08 530] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:08 532] ns         582  name server start  
+[2023/10/19 23:23:08 532] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:08 532] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:08 532] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:08 535] ns         555  net_type =  standard  
+[2023/10/19 23:23:08 535] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:08 536] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:08 536] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:08 536] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:08 536] network    263  gethostbyname  hdns.xf-yun.com  ns3  
+[2023/10/19 23:23:08 542] network    245  dns resp  10214  ns3  
+[2023/10/19 23:23:08 543] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:08 545] network    445  gethttpresp2  117.121.48.5  80  ns4  
+[2023/10/19 23:23:08 545] network    465  prot_type  tcp  
+[2023/10/19 23:23:08 549] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:08 549] transport  77   dns_failed  
+[2023/10/19 23:23:08 553] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:08 553] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:08 555] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:08 558] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:08 563] network    418  soc error  10202  ns4  
+[2023/10/19 23:23:08 565] ns         253  name server http resp  10202  
+[2023/10/19 23:23:08 565] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:08 565] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:08 565] ns         116  use default ip  
+[2023/10/19 23:23:08 566] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:08 566] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:08 566] ns         670  no data in ns_q  
+[2023/10/19 23:23:08 568] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:08 569] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:08 569] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:08 571] transport  342  soc_conn_failed  
+[2023/10/19 23:23:08 571] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:08 579] transport  416  switch 80  
+[2023/10/19 23:23:08 582] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:08 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:08 707] isr_1conn  262  netperf:  68  
+[2023/10/19 23:23:08 799] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:08 999] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 013] isr_1conn  262  netperf:  51  
+[2023/10/19 23:23:09 200] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 332] isr_1conn  262  netperf:  43  
+[2023/10/19 23:23:09 400] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 582] transport  330  soc_10202_wait  
+[2023/10/19 23:23:09 584] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:09 584] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:09 588] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:09 588] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:09 588] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:09 588] transport  1086 name =   iat  
+[2023/10/19 23:23:09 588] ns         634  ntt=  unknown  
+[2023/10/19 23:23:09 589] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:09 589] ns         582  name server start  
+[2023/10/19 23:23:09 589] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:09 592] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:09 592] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:09 592] ns         555  net_type =  standard  
+[2023/10/19 23:23:09 594] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:09 594] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:09 595] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:09 595] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:09 595] network    263  gethostbyname  hdns.xf-yun.com  ns5  
+[2023/10/19 23:23:09 601] network    245  dns resp  10214  ns5  
+[2023/10/19 23:23:09 604] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:09 605] network    445  gethttpresp2  117.121.48.5  80  ns6  
+[2023/10/19 23:23:09 605] network    465  prot_type  tcp  
+[2023/10/19 23:23:09 611] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:09 612] transport  77   dns_failed  
+[2023/10/19 23:23:09 615] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:09 617] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:09 618] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:09 619] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:09 624] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 627] network    418  soc error  10202  ns6  
+[2023/10/19 23:23:09 628] ns         253  name server http resp  10202  
+[2023/10/19 23:23:09 628] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:09 628] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:09 628] ns         116  use default ip  
+[2023/10/19 23:23:09 628] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:09 628] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:09 628] ns         670  no data in ns_q  
+[2023/10/19 23:23:09 628] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:09 630] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:09 632] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:09 632] transport  342  soc_conn_failed  
+[2023/10/19 23:23:09 632] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:09 638] transport  416  switch 80  
+[2023/10/19 23:23:09 638] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:09 640] isr_1conn  262  netperf:  36  
+[2023/10/19 23:23:09 799] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 877] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:23:09 884] isr_1conn  1843 ASR_CLOUD_MSG_AUW  1920  4  
+[2023/10/19 23:23:09 885] isr_1conn  1897 starttimer status_cb_timeout, timeout is:  3000  
+[2023/10/19 23:23:09 885] isr_1conn  1906 audio len:  78720  
+[2023/10/19 23:23:09 887] isr_1conn  1909 drate:   0  
+[2023/10/19 23:23:09 887] isr_1conn  1912 user  
+[2023/10/19 23:23:09 887] isr_1conn  1921 drate, start local.  
+[2023/10/19 23:23:09 954] isr_1conn  262  netperf:  28  
+[2023/10/19 23:23:10 269] isr_1conn  262  netperf:  11  
+[2023/10/19 23:23:10 581] isr_1conn  262  netperf:  13  
+[2023/10/19 23:23:10 648] transport  330  soc_10202_wait  
+[2023/10/19 23:23:10 648] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:10 648] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:10 653] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:10 653] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:10 654] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:10 654] transport  1086 name =   iat  
+[2023/10/19 23:23:10 654] ns         634  ntt=  unknown  
+[2023/10/19 23:23:10 654] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:10 654] ns         582  name server start  
+[2023/10/19 23:23:10 655] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:10 655] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:10 657] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:10 657] ns         555  net_type =  standard  
+[2023/10/19 23:23:10 657] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:10 657] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:10 657] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:10 658] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:10 658] network    263  gethostbyname  hdns.xf-yun.com  ns7  
+[2023/10/19 23:23:10 665] network    245  dns resp  10214  ns7  
+[2023/10/19 23:23:10 665] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:10 665] network    445  gethttpresp2  117.121.48.5  80  ns8  
+[2023/10/19 23:23:10 667] network    465  prot_type  tcp  
+[2023/10/19 23:23:10 671] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:10 671] transport  77   dns_failed  
+[2023/10/19 23:23:10 676] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:10 676] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:10 677] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:10 677] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:10 681] network    418  soc error  10202  ns8  
+[2023/10/19 23:23:10 684] ns         253  name server http resp  10202  
+[2023/10/19 23:23:10 684] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:10 684] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:10 684] ns         116  use default ip  
+[2023/10/19 23:23:10 684] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:10 686] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:10 686] ns         670  no data in ns_q  
+[2023/10/19 23:23:10 686] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:10 688] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:10 690] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:10 690] transport  342  soc_conn_failed  
+[2023/10/19 23:23:10 690] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:10 693] transport  416  switch 80  
+[2023/10/19 23:23:10 693] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:10 892] isr_1conn  262  netperf:  16  
+[2023/10/19 23:23:11 203] isr_1conn  262  netperf:  18  
+[2023/10/19 23:23:11 515] isr_1conn  262  netperf:  11  
+[2023/10/19 23:23:11 690] transport  330  soc_10202_wait  
+[2023/10/19 23:23:11 691] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:11 691] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:11 694] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:11 696] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:11 696] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:11 696] transport  1086 name =   iat  
+[2023/10/19 23:23:11 697] ns         634  ntt=  unknown  
+[2023/10/19 23:23:11 697] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:11 697] ns         582  name server start  
+[2023/10/19 23:23:11 697] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:11 697] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:11 697] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:11 697] ns         555  net_type =  standard  
+[2023/10/19 23:23:11 697] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:11 698] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:11 698] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:11 698] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:11 698] network    263  gethostbyname  hdns.xf-yun.com  ns9  
+[2023/10/19 23:23:11 701] network    245  dns resp  10214  ns9  
+[2023/10/19 23:23:11 703] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:11 703] network    445  gethttpresp2  117.121.48.5  80  ns10  
+[2023/10/19 23:23:11 703] network    465  prot_type  tcp  
+[2023/10/19 23:23:11 707] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:11 707] transport  77   dns_failed  
+[2023/10/19 23:23:11 710] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:11 711] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:11 711] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:11 713] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:11 716] network    418  soc error  10202  ns10  
+[2023/10/19 23:23:11 717] ns         253  name server http resp  10202  
+[2023/10/19 23:23:11 717] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:11 717] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:11 717] ns         116  use default ip  
+[2023/10/19 23:23:11 720] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:11 720] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:11 720] ns         670  no data in ns_q  
+[2023/10/19 23:23:11 720] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:11 721] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:11 721] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:11 721] transport  342  soc_conn_failed  
+[2023/10/19 23:23:11 721] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:11 724] transport  416  switch 80  
+[2023/10/19 23:23:11 726] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:11 828] isr_1conn  262  netperf:  13  
+[2023/10/19 23:23:12 142] isr_1conn  262  netperf:  16  
+[2023/10/19 23:23:12 453] isr_1conn  262  netperf:  18  
+[2023/10/19 23:23:12 532] transport  320  soc_10202_timeout  
+[2023/10/19 23:23:12 720] transport  330  soc_10202_wait  
+[2023/10/19 23:23:12 720] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:12 720] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:12 723] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:12 723] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:12 723] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:12 723] transport  1086 name =   iat  
+[2023/10/19 23:23:12 723] ns         634  ntt=  unknown  
+[2023/10/19 23:23:12 723] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:12 723] ns         582  name server start  
+[2023/10/19 23:23:12 723] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:12 723] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:12 723] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:12 723] ns         555  net_type =  standard  
+[2023/10/19 23:23:12 724] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:12 724] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:12 724] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:12 724] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:12 724] network    263  gethostbyname  hdns.xf-yun.com  ns11  
+[2023/10/19 23:23:12 726] network    245  dns resp  10214  ns11  
+[2023/10/19 23:23:12 727] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:12 727] network    445  gethttpresp2  117.121.48.5  80  ns12  
+[2023/10/19 23:23:12 727] network    465  prot_type  tcp  
+[2023/10/19 23:23:12 733] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:12 733] transport  77   dns_failed  
+[2023/10/19 23:23:12 739] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:12 739] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:12 740] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:12 742] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:12 746] network    418  soc error  10202  ns12  
+[2023/10/19 23:23:12 746] ns         253  name server http resp  10202  
+[2023/10/19 23:23:12 746] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:12 746] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:12 746] ns         116  use default ip  
+[2023/10/19 23:23:12 746] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:12 746] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:12 747] ns         670  no data in ns_q  
+[2023/10/19 23:23:12 747] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:12 750] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:12 750] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:12 750] transport  342  soc_conn_failed  
+[2023/10/19 23:23:12 750] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:12 756] transport  416  switch 80  
+[2023/10/19 23:23:12 757] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:12 759] isr_1conn  262  netperf:  11  
+[2023/10/19 23:23:12 891] isr_1conn  218  The called number of status_cb_timeout:  1  
+[2023/10/19 23:23:13 081] isr_1conn  262  netperf:  13  
+[2023/10/19 23:23:13 398] isr_1conn  262  netperf:  16  
+[2023/10/19 23:23:13 713] isr_1conn  262  netperf:  14  
+[2023/10/19 23:23:13 776] transport  330  soc_10202_wait  
+[2023/10/19 23:23:13 778] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:13 778] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:13 782] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:13 782] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:13 782] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:13 782] transport  1086 name =   iat  
+[2023/10/19 23:23:13 782] ns         634  ntt=  unknown  
+[2023/10/19 23:23:13 782] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:13 783] ns         582  name server start  
+[2023/10/19 23:23:13 783] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:13 785] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:13 785] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:13 786] ns         555  net_type =  standard  
+[2023/10/19 23:23:13 786] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:13 786] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:13 786] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:13 789] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:13 789] network    263  gethostbyname  hdns.xf-yun.com  ns13  
+[2023/10/19 23:23:13 795] network    245  dns resp  10214  ns13  
+[2023/10/19 23:23:13 796] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:13 796] network    445  gethttpresp2  117.121.48.5  80  ns14  
+[2023/10/19 23:23:13 798] network    465  prot_type  tcp  
+[2023/10/19 23:23:13 802] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:13 802] transport  77   dns_failed  
+[2023/10/19 23:23:13 806] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:13 806] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:13 808] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:13 809] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:13 815] network    418  soc error  10202  ns14  
+[2023/10/19 23:23:13 815] ns         253  name server http resp  10202  
+[2023/10/19 23:23:13 816] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:13 816] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:13 816] ns         116  use default ip  
+[2023/10/19 23:23:13 818] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:13 818] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:13 818] ns         670  no data in ns_q  
+[2023/10/19 23:23:13 818] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:13 819] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:13 819] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:13 819] transport  342  soc_conn_failed  
+[2023/10/19 23:23:13 821] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:13 825] transport  416  switch 80  
+[2023/10/19 23:23:13 826] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:14 029] isr_1conn  262  netperf:  16  
+[2023/10/19 23:23:14 342] isr_1conn  262  netperf:  19  
+[2023/10/19 23:23:14 658] isr_1conn  262  netperf:  11  
+[2023/10/19 23:23:14 838] transport  330  soc_10202_wait  
+[2023/10/19 23:23:14 838] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:23:14 838] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:23:14 842] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:14 842] transport  1179 try preferred port:  80  
+[2023/10/19 23:23:14 842] transport  1083 NAMESERVER START  
+[2023/10/19 23:23:14 842] transport  1086 name =   iat  
+[2023/10/19 23:23:14 842] ns         634  ntt=  unknown  
+[2023/10/19 23:23:14 842] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:23:14 842] ns         582  name server start  
+[2023/10/19 23:23:14 842] ns         588  ns_sub =   iat  
+[2023/10/19 23:23:14 842] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:23:14 844] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:14 844] ns         555  net_type =  standard  
+[2023/10/19 23:23:14 844] ns         556  cmwapascmnet =  
+[2023/10/19 23:23:14 844] ns         557  uniwapasuninet =  
+[2023/10/19 23:23:14 844] ns         558  ctwapasctnet =  
+[2023/10/19 23:23:14 845] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:23:14 845] network    263  gethostbyname  hdns.xf-yun.com  ns15  
+[2023/10/19 23:23:14 862] network    245  dns resp  10214  ns15  
+[2023/10/19 23:23:14 864] ns         454  ns dns failed, err =   10214  
+[2023/10/19 23:23:14 865] network    445  gethttpresp2  117.121.48.5  80  ns16  
+[2023/10/19 23:23:14 865] network    465  prot_type  tcp  
+[2023/10/19 23:23:14 869] transport  296  [dns] [1] failed! 10214  
+[2023/10/19 23:23:14 869] transport  77   dns_failed  
+[2023/10/19 23:23:14 872] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:14 872] network    90   ipfromenv ,  ipcfg  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:14 872] transport  1304 [soc] connect   42.62.116.18  80  
+[2023/10/19 23:23:14 875] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:23:14 880] network    418  soc error  10202  ns16  
+[2023/10/19 23:23:14 881] ns         253  name server http resp  10202  
+[2023/10/19 23:23:14 881] ns         412  ns response failed, err =  10202  
+[2023/10/19 23:23:14 881] ns         114  ns_host=  open.xf-yun.com  
+[2023/10/19 23:23:14 881] ns         116  use default ip  
+[2023/10/19 23:23:14 882] transport  1063 ns_ip =   42.62.116.18  
+[2023/10/19 23:23:14 882] transport  1064 ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:14 882] ns         670  no data in ns_q  
+[2023/10/19 23:23:14 884] ns         671  conti_ns,ns_inprog =   1  
+[2023/10/19 23:23:14 884] transport  542  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:14 885] transport  67   clear_ip ip_type =  def_iatopen.xf-yun.com  
+[2023/10/19 23:23:14 885] transport  342  soc_conn_failed  
+[2023/10/19 23:23:14 885] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:14 892] transport  416  switch 80  
+[2023/10/19 23:23:14 894] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:14 894] transport  58   transport=  table(65016aa0) 
+[2023/10/19 23:23:14 895] transport  59   throw_exception  10202  10065  MSC:[soc] [1] error 10202 10065!  
+[2023/10/19 23:23:14 895] isr_1conn  735  transport exception  10202  
+[2023/10/19 23:23:14 895] isr_1conn  762  start a new session  
+[2023/10/19 23:23:14 900] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:23:14 900] transport  972  iplist not avail  
+[2023/10/19 23:23:14 900] transport  1332 [soc] disconnect   
+[2023/10/19 23:23:14 901] transport  991  transport clean  
+[2023/10/19 23:23:14 901] isr_1conn  1173 no_audio is true  
+[2023/10/19 23:23:14 901] isr_1conn  1201 [session] send 1th audio  
+[2023/10/19 23:23:14 901] isr_1conn  1203 totalsz =   7503  
+[2023/10/19 23:23:14 901] isr_1conn  1206 start netperf_fs_timer  
+[2023/10/19 23:23:14 903] isr_1conn  1229 [session] send last audio!  
+[2023/10/19 23:23:14 971] isr_1conn  262  netperf:  14  
+[2023/10/19 23:23:15 285] isr_1conn  262  netperf:  16  
+[2023/10/19 23:23:15 599] isr_1conn  262  netperf:  19  
+[2023/10/19 23:23:15 723] isr_1conn  307  send_ok_num, timer_num, send_average =   0  2  0  
+[2023/10/19 23:23:15 723] isr_1conn  310  netperf =   30  
+[2023/10/19 23:23:15 723] isr_1conn  311  start netperf_other_timer  
+[2023/10/19 23:23:15 927] isr_1conn  262  netperf:  17  
+[2023/10/19 23:23:16 131] isr_1conn  289  send_ok_num, timer_num, send_average =   0  3  0  
+[2023/10/19 23:23:16 131] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:16 243] isr_1conn  262  netperf:  15  
+[2023/10/19 23:23:16 529] isr_1conn  289  send_ok_num, timer_num, send_average =   0  4  0  
+[2023/10/19 23:23:16 529] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:16 561] isr_1conn  262  netperf:  18  
+[2023/10/19 23:23:16 874] isr_1conn  262  netperf:  10  
+[2023/10/19 23:23:16 937] isr_1conn  289  send_ok_num, timer_num, send_average =   0  5  0  
+[2023/10/19 23:23:16 937] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:17 191] isr_1conn  262  netperf:  13  
+[2023/10/19 23:23:17 349] isr_1conn  289  send_ok_num, timer_num, send_average =   0  6  0  
+[2023/10/19 23:23:17 349] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:17 506] isr_1conn  262  netperf:  15  
+[2023/10/19 23:23:17 756] isr_1conn  289  send_ok_num, timer_num, send_average =   0  7  0  
+[2023/10/19 23:23:17 756] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:17 819] isr_1conn  262  netperf:  18  
+[2023/10/19 23:23:18 121] isr_1conn  262  netperf:  10  
+[2023/10/19 23:23:18 171] isr_1conn  289  send_ok_num, timer_num, send_average =   0  8  0  
+[2023/10/19 23:23:18 173] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:18 443] isr_1conn  262  netperf:  13  
+[2023/10/19 23:23:18 584] isr_1conn  289  send_ok_num, timer_num, send_average =   0  9  0  
+[2023/10/19 23:23:18 584] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:18 756] isr_1conn  262  netperf:  15  
+[2023/10/19 23:23:18 992] isr_1conn  289  send_ok_num, timer_num, send_average =   0  10  0  
+[2023/10/19 23:23:18 993] isr_1conn  292  netperf =   30  
+[2023/10/19 23:23:19 055] isr_1conn  262  netperf:  18  

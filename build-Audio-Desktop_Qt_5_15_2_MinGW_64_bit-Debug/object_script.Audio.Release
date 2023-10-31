@@ -1,0 +1,10 @@
+release/framelessWidget.o
+release/iflytek.o
+release/main.o
+release/multimedia.o
+release/recognizer.o
+release/widget.o
+release/qrc_resource.o
+release/moc_framelessWidget.o
+release/moc_multimedia.o
+release/moc_widget.o

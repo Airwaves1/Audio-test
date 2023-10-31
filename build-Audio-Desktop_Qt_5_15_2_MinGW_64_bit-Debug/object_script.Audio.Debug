@@ -1,0 +1,10 @@
+debug/framelessWidget.o
+debug/iflytek.o
+debug/main.o
+debug/multimedia.o
+debug/recognizer.o
+debug/widget.o
+debug/qrc_resource.o
+debug/moc_framelessWidget.o
+debug/moc_multimedia.o
+debug/moc_widget.o

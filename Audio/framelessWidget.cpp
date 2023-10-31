@@ -5,20 +5,28 @@
 #include<QDir>
 #include<QStackedWidget>
 
+
+
 framelessWidget::framelessWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::framelessWidget)
 {
     ui->setupUi(this);
-    ui->mainWidget->setMouseTracking(true); // 允许鼠标跟踪
-    ui->mainDisplayWidget->setMouseTracking(true);
-    setMouseTracking(true);
+    //ui->mainWidget->setMouseTracking(true); // 允许鼠标跟踪
+    //ui->mainDisplayWidget->setMouseTracking(true);
+    //setMouseTracking(true);
 
     QTimer *t = new QTimer(this);
     connect(t, &QTimer::timeout, this, [=](){Init();});
     t->setSingleShot(true);
     t->start(10);
     this->setAttribute(Qt::WA_TranslucentBackground);  //设置父窗口为透明
+
+
+    ui->record_pushButton->setRole(Material::Secondary);
+
+    multimedia = new Multimedia(this);
+
 
     connect(ui->Button_max, &QPushButton::clicked, this, [=]()  // 点击最大化按钮
     {
@@ -33,14 +41,6 @@ framelessWidget::framelessWidget(QWidget *parent)
         this->close();
     });
 
-
-    connect(ui->iflytek_pushButton, &QPushButton::clicked, [=](){
-        ui->stackedWidget->setCurrentIndex(0);
-    });
-
-    connect(ui->song_pushButton, &QPushButton::clicked, [=](){
-        ui->stackedWidget->setCurrentIndex(1);
-    });
 
 }
 
@@ -186,19 +186,19 @@ void framelessWidget::mouseMoveEvent(QMouseEvent *event)
 // 窗口变化事件
 void framelessWidget::resizeEvent(QResizeEvent *event)
 {
-    //Resize border
-    if(border)
-        border->resize(ui->mainWidget->size() + QSize(2, 2));
+//    //Resize border
+//    if(border)
+//        border->resize(ui->mainWidget->size() + QSize(2, 2));
 
-    //Resize mask
-    QPainterPath path;
-#ifdef Q_OS_WINDOWS
-    path.addRoundedRect(ui->mainWidget->rect(), cornerRadius - 1, cornerRadius - 1);
-#else
-    path.addRect(ui->mainWidget->rect());
-#endif
-    QRegion mask(path.toFillPolygon().toPolygon());
-    ui->mainWidget->setMask(mask);
+//    //Resize mask
+//    QPainterPath path;
+//#ifdef Q_OS_WINDOWS
+//    path.addRoundedRect(ui->mainWidget->rect(), cornerRadius - 1, cornerRadius - 1);
+//#else
+//    path.addRect(ui->mainWidget->rect());
+//#endif
+//    QRegion mask(path.toFillPolygon().toPolygon());
+//    ui->mainWidget->setMask(mask);
 
     //Resize all pages
 //    for(int i = 0; i < pageList.size(); i++){
@@ -250,5 +250,33 @@ void framelessWidget::on_dir_pushButton_clicked()
     auto musicList = dir.entryList(QStringList()<<"*.mp3"<<"*.wav",QDir::Files); //获取该目录下的mp3，wav格式的文件
     qInfo()<<musicList;
     ui->listWidget->addItems(musicList);
+}
+
+
+void framelessWidget::on_iflytek_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void framelessWidget::on_song_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void framelessWidget::on_record_pushButton_pressed()
+{
+    ui->record_pushButton->setHaloVisible(true);
+    qDebug()<<"start record";
+    multimedia->startRecord();
+}
+
+
+void framelessWidget::on_record_pushButton_released()
+{
+    ui->record_pushButton->setHaloVisible(false);
+    qDebug()<<"stop record";
+    multimedia->stopRecord();
 }
 

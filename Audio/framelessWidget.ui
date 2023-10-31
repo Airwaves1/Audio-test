@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>framelessWidget</class>
  <widget class="QWidget" name="framelessWidget">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,16 +17,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-	border:none;
-}
-QPushButton:hover {
-    border-color: #3498db; /* 鼠标悬停时的边框颜色 */
-}
-
-QPushButton:pressed {
-    background-color: #d5eaf2; /* 按下按钮时的背景颜色，非常浅的蓝色 */
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -226,16 +220,19 @@ background-color: rgb(251, 251, 251);}</string>
                 <property name="geometry">
                  <rect>
                   <x>-50</x>
-                  <y>-10</y>
-                  <width>1071</width>
+                  <y>0</y>
+                  <width>1121</width>
                   <height>621</height>
                  </rect>
+                </property>
+                <property name="whatsThis">
+                 <string>waht</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="iflytekPage">
                  <widget class="QLabel" name="label">
@@ -251,20 +248,35 @@ background-color: rgb(251, 251, 251);}</string>
                    <string>page1</string>
                   </property>
                  </widget>
-                 <widget class="QtMaterialAutoComplete" name="lineEdit">
+                 <widget class="QtMaterialFlatButton" name="record_pushButton">
                   <property name="geometry">
                    <rect>
-                    <x>220</x>
-                    <y>350</y>
-                    <width>113</width>
-                    <height>23</height>
+                    <x>420</x>
+                    <y>450</y>
+                    <width>100</width>
+                    <height>100</height>
                    </rect>
                   </property>
-                  <property name="inputMask">
-                   <string/>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    border-radius: 30px; /* 圆形按钮，半径为按钮宽度的一半 */
+    width: 60px; /* 按钮宽度 */
+    height: 60px; /* 按钮高度 */
+    background-color: #3498db; /* 按钮的背景颜色，可以根据需要修改 */
+    color: white; /* 文字颜色 */
+    font-size: 16px; /* 文字大小 */
+    border: none; /* 无边框 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 按钮按下时的阴影效果 */
+}
+
+QPushButton:pressed {
+    box-shadow: none; /* 去除按下时的阴影效果 */
+}
+
+</string>
                   </property>
-                  <property name="placeholderText">
-                   <string>李彩华是吉把</string>
+                  <property name="text">
+                   <string>按住说话</string>
                   </property>
                  </widget>
                 </widget>
@@ -344,13 +356,23 @@ background-color: rgb(251, 251, 251);}</string>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">*{
+    border:none
+
+}
+QPushButton:hover {
+    border-color: #3498db; /* 鼠标悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: #d5eaf2; /* 按下按钮时的背景颜色，非常浅的蓝色 */
+}</string>
                </property>
                <widget class="QPushButton" name="dir_pushButton">
                 <property name="geometry">
                  <rect>
-                  <x>210</x>
-                  <y>20</y>
+                  <x>200</x>
+                  <y>30</y>
                   <width>50</width>
                   <height>50</height>
                  </rect>
@@ -365,9 +387,9 @@ background-color: rgb(251, 251, 251);}</string>
                <widget class="QPushButton" name="play_pushButton">
                 <property name="geometry">
                  <rect>
-                  <x>450</x>
-                  <y>20</y>
-                  <width>50</width>
+                  <x>440</x>
+                  <y>30</y>
+                  <width>60</width>
                   <height>50</height>
                  </rect>
                 </property>
@@ -381,8 +403,8 @@ background-color: rgb(251, 251, 251);}</string>
                <widget class="QPushButton" name="pre_pushButton">
                 <property name="geometry">
                  <rect>
-                  <x>340</x>
-                  <y>20</y>
+                  <x>330</x>
+                  <y>30</y>
                   <width>50</width>
                   <height>50</height>
                  </rect>
@@ -397,8 +419,8 @@ background-color: rgb(251, 251, 251);}</string>
                <widget class="QPushButton" name="next_pushButton">
                 <property name="geometry">
                  <rect>
-                  <x>560</x>
-                  <y>20</y>
+                  <x>550</x>
+                  <y>30</y>
                   <width>50</width>
                   <height>50</height>
                  </rect>
@@ -413,8 +435,8 @@ background-color: rgb(251, 251, 251);}</string>
                <widget class="QPushButton" name="volume_pushButton">
                 <property name="geometry">
                  <rect>
-                  <x>670</x>
-                  <y>20</y>
+                  <x>660</x>
+                  <y>30</y>
                   <width>50</width>
                   <height>50</height>
                  </rect>
@@ -425,6 +447,32 @@ image: url(:/resource/image/volume.png);</string>
                 </property>
                 <property name="text">
                  <string/>
+                </property>
+               </widget>
+               <widget class="QtMaterialSlider" name="horizontalSlider">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1061</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+               <widget class="QtMaterialSlider" name="horizontalSlider_2">
+                <property name="geometry">
+                 <rect>
+                  <x>700</x>
+                  <y>50</y>
+                  <width>121</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
                 </property>
                </widget>
               </widget>
@@ -489,9 +537,14 @@ QPushButton:pressed {
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QtMaterialAutoComplete</class>
-   <extends>QLineEdit</extends>
-   <header location="global">qtmaterialautocomplete.h</header>
+   <class>QtMaterialSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">qtmaterialslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QtMaterialFlatButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">qtmaterialflatbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

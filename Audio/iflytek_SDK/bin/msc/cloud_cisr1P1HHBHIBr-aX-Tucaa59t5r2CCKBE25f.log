@@ -1,0 +1,272 @@
+============================================================
+Time  2023/10/19 23:03:30 446 
+============================================================
+[2023/10/19 23:03:30 446] isr_1conn  2226 SYS_MSG_LOAD_CLOUD  
+[2023/10/19 23:03:30 446] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   msp_status_cb  param1 =  func(5f1b50e0) 
+[2023/10/19 23:03:30 461] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_rslt_cb  param1 =  func(5f1b4ba0) 
+[2023/10/19 23:03:30 463] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_err_cb  param1 =  func(5f1b4d60) 
+[2023/10/19 23:03:30 467] isr_1conn  2247 SYS_MSG_REGCB_CLOUD param0 =   cloud_status_cb  param1 =  func(5f1b4970) 
+[2023/10/19 23:03:30 467] isr_1conn  1411 onesoc  
+[2023/10/19 23:03:30 467] isr_1conn  1412 ASR_CLOUD_MSG_SSB  
+[2023/10/19 23:03:30 467] isr_1conn  1427 isr_1conn  cloud_cisr1P1HHBHIBr-aX-Tucaa59t5r2CCKBE25f  268436457  1552357601  
+[2023/10/19 23:03:30 467] isr_1conn  1497 req_lgi_id =  d18772609033@1681e85f  
+[2023/10/19 23:03:30 467] isr_1conn  1631 nil  
+[2023/10/19 23:03:30 467] isr_1conn  1697 speex-wb  
+[2023/10/19 23:03:30 467] isr_1conn  1785 net_once_bytes  nil  
+[2023/10/19 23:03:30 467] isr_1conn  1790 need_encode  true  
+[2023/10/19 23:03:30 467] isr_1conn  1792 once bytes  122  
+[2023/10/19 23:03:30 480] isr_1conn  1816 User set url is   nil  
+[2023/10/19 23:03:30 480] config     91   select default  
+[2023/10/19 23:03:30 480] config     113  use general cloud  
+[2023/10/19 23:03:30 480] transport  645  paramkvsport is   nil  
+[2023/10/19 23:03:30 480] transport  657  ns_enable=  1  
+[2023/10/19 23:03:30 480] transport  659  2017-08--24 is_ns_need_close =   nil  
+[2023/10/19 23:03:30 482] transport  665  net.nettype=  unknown  
+[2023/10/19 23:03:30 482] transport  675  url.full=  nil  
+[2023/10/19 23:03:30 482] transport  680  server_url_host=, server_url_port=, server_url_path=  open.xf-yun.com  nil  /msp.do  
+[2023/10/19 23:03:30 483] transport  907  net type:  unknown  
+[2023/10/19 23:03:30 483] transport  908  net operator:  def  
+[2023/10/19 23:03:30 483] transport  909  use proxy:  false  
+[2023/10/19 23:03:30 483] transport  1105 session.domain=  open.xf-yun.com  
+[2023/10/19 23:03:30 483] transport  1106 url.host=  open.xf-yun.com  
+[2023/10/19 23:03:30 487] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:03:30 487] transport  1179 try preferred port:  1028  
+[2023/10/19 23:03:30 487] transport  1083 NAMESERVER START  
+[2023/10/19 23:03:30 487] transport  1086 name =   iat  
+[2023/10/19 23:03:30 487] ns         634  ntt=  unknown  
+[2023/10/19 23:03:30 487] transport  1089 trans,ns_inprog =  0  
+[2023/10/19 23:03:30 487] ns         582  name server start  
+[2023/10/19 23:03:30 490] ns         588  ns_sub =   iat  
+[2023/10/19 23:03:30 490] ns         596  ns_host =   open.xf-yun.com  
+[2023/10/19 23:03:30 490] ns         475  ns_host=  open.xf-yun.com  
+[2023/10/19 23:03:30 490] ns         555  net_type =  standard  
+[2023/10/19 23:03:30 490] ns         556  cmwapascmnet =  
+[2023/10/19 23:03:30 490] ns         557  uniwapasuninet =  
+[2023/10/19 23:03:30 490] ns         558  ctwapasctnet =  
+[2023/10/19 23:03:30 490] ns         576  host=  hdns.xf-yun.com  
+[2023/10/19 23:03:30 490] network    263  gethostbyname  hdns.xf-yun.com  ns1  
+[2023/10/19 23:03:30 493] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  1  
+[2023/10/19 23:03:30 493] isr_1conn  1860 RIFF  WAVE  
+[2023/10/19 23:03:30 493] isr_1conn  1863 fmt   
+[2023/10/19 23:03:30 493] isr_1conn  1866 data  
+[2023/10/19 23:03:30 494] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 496] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 500] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 500] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 505] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 516] network    245  dns resp  0  ns1  
+[2023/10/19 23:03:30 516] ns         422  ns dns ok  101.200.180.128  
+[2023/10/19 23:03:30 516] ns         209  ip front is  101.200.180  
+[2023/10/19 23:03:30 516] ns         429  is_voicecloud_ip=  2  
+[2023/10/19 23:03:30 516] ns         436  ip_is_expected=  false  
+[2023/10/19 23:03:30 516] ns         444  ip_is_expected=  false  
+[2023/10/19 23:03:30 516] ns         447  use ns_def_ip  
+[2023/10/19 23:03:30 525] network    445  gethttpresp2  117.121.48.5  80  ns2  
+[2023/10/19 23:03:30 525] network    465  prot_type  tcp  
+[2023/10/19 23:03:30 542] transport  194  [dns] [1] response 114.118.65.97  
+[2023/10/19 23:03:30 542] transport  202  114  118  65  97  
+[2023/10/19 23:03:30 542] transport  204  ipv =  v4  
+[2023/10/19 23:03:30 542] transport  208  dns ip is v4  
+[2023/10/19 23:03:30 542] transport  137  ip front is  114.118.65  
+[2023/10/19 23:03:30 543] transport  142  warning: ip not found in ip_list  
+[2023/10/19 23:03:30 543] transport  261  expected ip  
+[2023/10/19 23:03:30 543] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  114.118.65.97  
+[2023/10/19 23:03:30 545] transport  291  dns cb start conn  
+[2023/10/19 23:03:30 545] transport  1304 [soc] connect   114.118.65.97  1028  
+[2023/10/19 23:03:30 545] transport  1316 mspsoc.open,prot_type=  tcp  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 582] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  6400  2  
+[2023/10/19 23:03:30 598] isr_1conn  1843 ASR_CLOUD_MSG_AUW  320  4  
+[2023/10/19 23:03:30 598] isr_1conn  1897 starttimer status_cb_timeout, timeout is:  3000  
+[2023/10/19 23:03:30 598] isr_1conn  1906 audio len:  147520  
+[2023/10/19 23:03:30 598] isr_1conn  1909 drate:   0  
+[2023/10/19 23:03:30 598] isr_1conn  1912 user  
+[2023/10/19 23:03:30 598] isr_1conn  1921 drate, start local.  
+[2023/10/19 23:03:30 765] transport  473  [soc] [1] connected  
+[2023/10/19 23:03:30 766] isr_1conn  367  transport connect ok  
+[2023/10/19 23:03:30 766] isr_1conn  1118 send ssb request  
+[2023/10/19 23:03:30 766] isr_1conn  806  using loginid  
+[2023/10/19 23:03:30 766] isr_1conn  833  lver:  nil  
+[2023/10/19 23:03:30 766] isr_1conn  838  cfg_ver:  nil  
+[2023/10/19 23:03:30 766] transport  1860 transport_obj.send | in  
+[2023/10/19 23:03:30 766] transport  1866 self.msg_flag_q  table(5f192cf0) 
+[2023/10/19 23:03:30 766] transport  1867 self.msg_q  table(5f193100) 
+[2023/10/19 23:03:30 766] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 766] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 766] transport  1801 self.connected  false  
+[2023/10/19 23:03:30 766] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 766] transport  1873 transport_obj.send | out  
+[2023/10/19 23:03:30 766] isr_1conn  1173 no_audio is true  
+[2023/10/19 23:03:30 766] isr_1conn  1201 [session] send 1th audio  
+[2023/10/19 23:03:30 766] isr_1conn  1203 totalsz =   14030  
+[2023/10/19 23:03:30 766] isr_1conn  1206 start netperf_fs_timer  
+[2023/10/19 23:03:30 766] transport  1860 transport_obj.send | in  
+[2023/10/19 23:03:30 766] transport  1866 self.msg_flag_q  table(5f192cf0) 
+[2023/10/19 23:03:30 766] transport  1867 self.msg_q  table(5f193100) 
+[2023/10/19 23:03:30 766] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 766] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 766] transport  1801 self.connected  false  
+[2023/10/19 23:03:30 766] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 766] transport  1873 transport_obj.send | out  
+[2023/10/19 23:03:30 766] isr_1conn  1229 [session] send last audio!  
+[2023/10/19 23:03:30 766] isr_1conn  1247 send rslt request  
+[2023/10/19 23:03:30 766] transport  1860 transport_obj.send | in  
+[2023/10/19 23:03:30 766] transport  1866 self.msg_flag_q  table(5f192cf0) 
+[2023/10/19 23:03:30 766] transport  1867 self.msg_q  table(5f193100) 
+[2023/10/19 23:03:30 766] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 766] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 766] transport  1801 self.connected  false  
+[2023/10/19 23:03:30 766] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 766] transport  1873 transport_obj.send | out  
+[2023/10/19 23:03:30 766] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 766] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 766] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 766] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 766] transport  1819 transport:try2send,#msg_q=  3  
+[2023/10/19 23:03:30 766] transport  1359 build http request.  
+[2023/10/19 23:03:30 773] transport  1476 POST /msp.do HTTP/1.1
+X-Sub: iat
+X-Par: ver=MSSP+0%2E9&sub=iat&cmd=ssb&ssm=1&auf=audio%2FL16%3Brate%3D16000&cver=5%2E0%2E42%2E1226&net%5Ftype=unknown&csid=cisr1P1HHBHIBr%2DaX%2DTucaa59t5r2CCKBE25f&key=0ekT/KgQg8uemCVKps9PRbMy5Be8exFN/oZJy/4n0rVvxzTMirmS8ZG2Scv^J9K1b8
+Host: open.xf-yun.com
+CT: text/params
+CE: gzip,encrypt/0.2
+CL: 152
+
+ N˚ èFuË•nÁTt €BÍu…ÛYÓõ’”2TU¸†Ú≥7hß®4.O∑kÈhπwÃnÇ@ñU
+´  
+[2023/10/19 23:03:30 773] transport  1819 transport:try2send,#msg_q=  2  
+[2023/10/19 23:03:30 773] transport  1359 build http request.  
+[2023/10/19 23:03:30 773] transport  1476 POST /msp.do HTTP/1.1
+X-Sub: iat
+X-Par: ver=MSSP+0%2E9&sub=iat&cmd=auw&aus=5&cver=5%2E0%2E42%2E1226&csid=cisr1P1HHBHIBr%2DaX%2DTucaa59t5r2CCKBE25f&key=0ekT/KgQg8uemCVKps9PRbMy5Be8exFN/oZJy/4n0rVvzQsklEZFIT1WScv^J9K1b8
+Host: open.xf-yun.com
+CT: audio/L16;rate=16000
+CE: speex-wb,encrypt/0.2
+CL: 14040
+
+ÉÉÃ5´ßåååååååÊ¢–òKª¿(	∫dˇöW1ZÚ—…)´	é_—…—…—…9…XR˘≠˙ƒ¡a“‹ﬂÎ<@…1«˛≥KÙo˙OƒH—‚NO/∆5n%V©ˇ˘¿€Ÿn_—…—…—…—…XR˘Ÿ‰âæ{È3^L•åéìàAòH¬¿UÊË_¢*˛_ÈèÓæáÙëPTUs|Æ_—…—…—…—…XRËì˙ƒ·•¨M}>LÃÎÅÅÜˆƒÉ	E9~ŒG]Ä©®€h‘åÔ+()n_—…—…—…  
+[2023/10/19 23:03:30 805] transport  1819 transport:try2send,#msg_q=  1  
+[2023/10/19 23:03:30 805] transport  1359 build http request.  
+[2023/10/19 23:03:30 805] transport  1476 POST /msp.do HTTP/1.1
+X-Sub: iat
+X-Par: ver=MSSP+0%2E9&sub=iat&cmd=grs&cver=5%2E0%2E42%2E1226&csid=cisr1P1HHBHIBr%2DaX%2DTucaa59t5r2CCKBE25f&key=0ekT/KgQg8uemCVKps9PRbMy5Be8exFN/oZJy/4n0rVvzNre7G7TlT0mScv^J9K1b8
+Host: open.xf-yun.com
+CT: text/plain
+CL: 1
+
+0  
+[2023/10/19 23:03:30 805] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:30 805] transport  482  [soc] [1] send ok  496  
+[2023/10/19 23:03:30 805] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 805] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 805] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 805] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 805] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:30 805] transport  482  [soc] [1] send ok  14349  
+[2023/10/19 23:03:30 805] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 805] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 805] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 805] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 805] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:30 805] transport  482  [soc] [1] send ok  264  
+[2023/10/19 23:03:30 805] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 805] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 805] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 805] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 805] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:30 950] transport  494  [soc] [1] readable  
+[2023/10/19 23:03:30 950] transport  1767 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 1
+X-Par: ver=MSSP+0%2E9&ret=0&uid=d18772609033&cver=5%2E0%2E42%2E1226&key=0fXbw3bC/L4FDtdhSXw0q6DxWzn2dwoXDGK/AFuRLBy7o^HBywnTxKrVcpSATK9HIDPbENUP2phqIZEyXvYQU6Hhmhs5T9hkChGRMl72EFOh4=
+X-Req-Date: 2023/10/19 23:03:29 701
+CL: 1
+X-Res-Date: 2023/10/19 23:03:29 707
+
+0  
+[2023/10/19 23:03:30 950] transport  1494 a_complete_httpmessage  200  
+[2023/10/19 23:03:30 950] transport  1604 is_update  true  
+[2023/10/19 23:03:30 950] isr_1conn  399  [trans] [isr_1conncisr1P1HHBHIBr-aX-Tucaa59t5r2CCKBE25f] readable  
+[2023/10/19 23:03:30 950] isr_1conn  435  response  
+[2023/10/19 23:03:30 950] isr_1conn  483  resp_syncid =  0  
+[2023/10/19 23:03:30 950] isr_1conn  553  sid =   iat000121a1@dx18b487688a5760c762  
+[2023/10/19 23:03:30 950] isr_1conn  559  not QUL_SUPPORT  
+[2023/10/19 23:03:30 950] isr_1conn  566  time cost by session begin command:  187  .  
+[2023/10/19 23:03:30 950] isr_1conn  580  0  2  2  0  
+[2023/10/19 23:03:30 950] isr_1conn  1247 send rslt request  
+[2023/10/19 23:03:30 950] transport  1860 transport_obj.send | in  
+[2023/10/19 23:03:30 950] transport  1866 self.msg_flag_q  table(5f192cf0) 
+[2023/10/19 23:03:30 950] transport  1867 self.msg_q  table(5f193100) 
+[2023/10/19 23:03:30 950] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 950] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 950] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 950] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 950] transport  1819 transport:try2send,#msg_q=  1  
+[2023/10/19 23:03:30 950] transport  1359 build http request.  
+[2023/10/19 23:03:30 950] transport  1476 POST /msp.do HTTP/1.1
+X-Sub: iat
+X-Par: ver=MSSP+0%2E9&sub=iat&cmd=grs&cver=5%2E0%2E42%2E1226&key=0fXbw3bC/L4FDtdhSXw0q6DxWzn2dwoXDGK/AFuRLBy7o^HBywnTxKrVcpSATK9HIDPbENUP2phqIZEyXvYQU6HvweuiqmNJb/GRMl72EFOh4=
+Host: open.xf-yun.com
+CT: text/plain
+CL: 1
+
+0  
+[2023/10/19 23:03:30 950] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:30 950] transport  1873 transport_obj.send | out  
+[2023/10/19 23:03:30 964] transport  482  [soc] [1] send ok  261  
+[2023/10/19 23:03:30 964] transport  1799 transport_obj.try2send | in  
+[2023/10/19 23:03:30 964] transport  1800 self.soc  udata(5ea42708) 
+[2023/10/19 23:03:30 967] transport  1801 self.connected  true  
+[2023/10/19 23:03:30 967] transport  1802 self.latesterr  0  
+[2023/10/19 23:03:30 967] transport  1819 transport:try2send,#msg_q=  0  
+[2023/10/19 23:03:31 467] transport  494  [soc] [1] readable  
+[2023/10/19 23:03:31 470] transport  1767 HTTP/1.1 200 OK
+Content-Length: 16
+X-Par: ver=MSSP+0%2E9&ret=0&uid=d18772609033&rss=5&cver=5%2E0%2E42%2E1226&eps=3&key=0fXbw3bC/L4FDtdhSXw0q6DxWzn2dwoXDGK/AFuRLBy7o^HBywnTxKrVcpSATK9HIDPbENUP2phqIZEyXvYQU6HsirsDHtuaHnGRMl72EFOh4=
+CT: binary/recresult;charset=gb2312
+CE: encrypt/0.2
+CL: 16
+X-Req-Date: 2023/10/19 23:03:29 880
+CL: 16
+X-Res-Date: 2023/10/19 23:03:30 117
+
+«3ªïXä»   
+[2023/10/19 23:03:31 470] transport  1494 a_complete_httpmessage  200  
+[2023/10/19 23:03:31 470] transport  1604 is_update  true  
+[2023/10/19 23:03:31 470] isr_1conn  399  [trans] [isr_1conncisr1P1HHBHIBr-aX-Tucaa59t5r2CCKBE25f] readable  
+[2023/10/19 23:03:31 470] isr_1conn  403  size =   14030  
+[2023/10/19 23:03:31 470] isr_1conn  412  send_ok_num, timer_num, send_average =   14030  1  14030  
+[2023/10/19 23:03:31 470] isr_1conn  415  netperf =   90  
+[2023/10/19 23:03:31 470] isr_1conn  419  start netperf_grs_timer  
+[2023/10/19 23:03:31 470] isr_1conn  435  response  
+[2023/10/19 23:03:31 470] isr_1conn  483  resp_syncid =  1  
+[2023/10/19 23:03:31 470] isr_1conn  655  1  5  2  
+[2023/10/19 23:03:31 470] isr_1conn  662  [session] got last result  
+[2023/10/19 23:03:31 470] isr_1conn  667  time from last audio to last result:  703  .  
+[2023/10/19 23:03:31 470] isr_1conn  668  time from session-begin to session-end:  703  .  
+[2023/10/19 23:03:31 470] network    90   ipfromenv ,  ipcache  open.xf-yun.com  def  114.118.65.97  
+[2023/10/19 23:03:31 470] transport  978  unexpected cached ip  
+[2023/10/19 23:03:31 470] network    95   iptoenv ,  ipcache  open.xf-yun.com  def  nil  
+[2023/10/19 23:03:31 470] transport  1332 [soc] disconnect   
+[2023/10/19 23:03:31 470] transport  991  transport clean  
+[2023/10/19 23:03:31 470] isr_1conn  677  [session] got 1th result  
+[2023/10/19 23:03:31 470] isr_1conn  689  time from first audio to first result:  703  .  
+[2023/10/19 23:03:31 572] isr_1conn  300  netperf =   100  
+[2023/10/19 23:03:31 637] isr_1conn  2052 ASR_CLOUD_MSG_SSE  
+[2023/10/19 23:03:31 641] isr_1conn  1276 isr_1conn session info  
+[2023/10/19 23:03:31 645] isr_1conn  2195 session finished! ret =   0  
