@@ -20,10 +20,7 @@ Multimedia::Multimedia(QObject *parent) : QObject(parent)
 
     //audioOutput = new QAudioOutput();
     player = new QMediaPlayer();
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ly134/Music/ikun.mp3")); // 替换为你的歌曲文件路径
 
-    player->setVolume(100); // 设置音量（0-100之间）
-    //player->play(); // 播放音乐
 }
 
 Multimedia::~Multimedia()
@@ -31,6 +28,8 @@ Multimedia::~Multimedia()
     delete buffer;
     delete audioInput;
 }
+
+
 
 void Multimedia::startRecord()
 {
@@ -99,3 +98,46 @@ void Multimedia::play(const QString& m_file)
         qDebug() << "Failed to open audio file!";
     }
 }
+
+
+void Multimedia::playMusic(const QString &file)
+{
+    //如果文件路径为空，则直接退出
+    if(file.isEmpty())
+    {
+        return;
+    }
+
+    if(playState==3)
+    {
+        player->stop();
+        playState = 0;
+        emit double_Clicked_play();
+    }
+
+    switch(player->state())
+    {
+    case QMediaPlayer::PlayingState:
+        player->pause();
+        playState = 0;
+        break;
+    case QMediaPlayer::StoppedState:
+        player->setMedia(QUrl::fromLocalFile(file)); // 替换为你的歌曲文件路径
+        player->play();
+        playState = 1;
+        break;
+    case QMediaPlayer::PausedState:
+        player->play();
+        playState = 2;
+        break;
+    }
+
+
+
+}
+
+
+
+
+
+

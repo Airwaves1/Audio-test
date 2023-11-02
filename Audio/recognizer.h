@@ -39,6 +39,8 @@ public:
 
     int tts(const char* src_text, QString des_path);
 
+    int select = 0;//选择音色,0为女声，1为男声,2为童声
+
 public slots:
 
 signals:

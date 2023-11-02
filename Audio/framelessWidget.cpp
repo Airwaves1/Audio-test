@@ -4,6 +4,9 @@
 #include<QFileDialog>
 #include<QDir>
 #include<QStackedWidget>
+
+#include <QPixmap>
+#include <QIcon>
 #include"iflytek.h"
 
 
@@ -24,6 +27,8 @@ framelessWidget::framelessWidget(QWidget *parent)
 
 
     ui->record_pushButton->setRole(Material::Secondary);
+    ui->play_pushButton->setStyleSheet("image: url(:/resource/image/play.png);");
+
 
     multimedia = new Multimedia(this);
     m_recognizer = new recognizer();
@@ -42,11 +47,24 @@ framelessWidget::framelessWidget(QWidget *parent)
         this->close();
     });
 
-
+    //语音识别完成信号
     connect(this,&framelessWidget::recognize_finished,this,&framelessWidget::talk_to_spark);
     //connect(this,&framelessWidget::recognize_finished,this,&framelessWidget::do_tts);
+    //语音合成完成信号
     connect(this,&framelessWidget::spark_finished,this,&framelessWidget::do_tts);
 
+    //复选框状态改变信号
+    connect(ui->voice1_checkBox,&QCheckBox::stateChanged,this,&framelessWidget::onCheckBoxStateChanged);
+    connect(ui->voice2_checkBox,&QCheckBox::stateChanged,this,&framelessWidget::onCheckBoxStateChanged);
+    connect(ui->voice3_checkBox,&QCheckBox::stateChanged,this,&framelessWidget::onCheckBoxStateChanged);
+
+
+    //播放列表双击信号
+    connect(ui->listWidget,&QListWidget::itemDoubleClicked,this,&framelessWidget::onItemDoubleClicked);
+    //双击后播放
+    connect(multimedia, &Multimedia::double_Clicked_play, this, [=](){
+        ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
+    });
 
 
 }
@@ -257,6 +275,16 @@ void framelessWidget::on_dir_pushButton_clicked()
     auto musicList = dir.entryList(QStringList()<<"*.mp3"<<"*.wav",QDir::Files); //获取该目录下的mp3，wav格式的文件
     qInfo()<<musicList;
     ui->listWidget->addItems(musicList);
+
+    ui->listWidget->setCurrentRow(0);
+
+    //将音乐完整的路径保存下来
+    for(auto music:musicList)
+    {
+        music = path + "/" + music;
+        playList.append(music);
+    }
+    qInfo()<<playList;
 }
 
 
@@ -278,7 +306,6 @@ void framelessWidget::on_record_pushButton_pressed()
     qDebug()<<"start record";
     multimedia->startRecord();
 }
-
 
 void framelessWidget::on_record_pushButton_released()
 {
@@ -306,7 +333,7 @@ void framelessWidget::do_tts()
     //QTextCodec* codec = QTextCodec::codecForName("GB2312");
     //QByteArray gb2312Data = codec->fromUnicode(utf8Data);
     const char* src_text = utf8Data.constData();
-
+    m_recognizer->select = select_voice;
     int tts_bool = m_recognizer->tts(src_text, "C:/Code/Qt/Audio/Audio/record/iflytek_voice.wav");
 
     qDebug() << "语音合成内容为！"<< tts_text;
@@ -344,4 +371,123 @@ void framelessWidget::onProcessFinished(const QString &input, const QString &out
     emit spark_finished();
 }
 
+void framelessWidget::onCheckBoxStateChanged(int state)
+{
+    // 获取信号发送者
+    QCheckBox* senderCheckBox = qobject_cast<QCheckBox*>(sender());
+    if (senderCheckBox) {
+        // 如果复选框被选中，则取消其他复选框的选中状态
+        if (state == Qt::Checked) {
+            if (senderCheckBox == ui->voice1_checkBox) {
+                ui->voice2_checkBox->setChecked(false);
+                ui->voice3_checkBox->setChecked(false);
+                select_voice = 0;
+            } else if (senderCheckBox == ui->voice2_checkBox) {
+                ui->voice1_checkBox->setChecked(false);
+                ui->voice3_checkBox->setChecked(false);
+                select_voice = 1;
+            } else if (senderCheckBox == ui->voice3_checkBox) {
+                ui->voice1_checkBox->setChecked(false);
+                ui->voice2_checkBox->setChecked(false);
+                select_voice =2 ;
+            }
+        }
+    }
+}
+
+
+
+void framelessWidget::on_play_pushButton_clicked()
+{
+
+    //如果播放列表为空，则不执行
+    if(playList.isEmpty())
+    {
+        return;
+    }
+
+    //获取选中的行号
+    int index = ui->listWidget->currentRow();
+    current_index = index;
+
+    QString music = playList[index].toString();
+
+    //获取选中的音乐资源文件位置
+    multimedia->playMusic(music);
+    qDebug()<<music;
+
+    //切换播放按钮的状态
+    switch (multimedia->playState) {
+    case 0:
+        // 使用样式表为按钮设置背景图片
+        ui->play_pushButton->setStyleSheet("image: url(:/resource/image/play.png);");
+        qDebug()<<"play";
+        break;
+    case 1:
+
+        ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
+        break;
+        qDebug()<<"pause";
+
+    case 2:
+
+        ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
+        break;
+        qDebug()<<"pause";
+
+    default:
+        break;
+    }
+
+}
+
+void framelessWidget::onItemDoubleClicked()
+{
+    current_index = ui->listWidget->currentRow();
+
+    QString music = playList[current_index].toString();
+
+    multimedia->playState = 3;
+
+    multimedia->playMusic(music);
+}
+
+
+void framelessWidget::on_next_pushButton_clicked()
+{
+    //如果播放列表为空，则不执行
+    if(playList.isEmpty())
+    {
+        return;
+    }
+    current_index = (current_index+1)%playList.size();
+    multimedia->playState = 3;
+    QString music = playList[current_index].toString();
+    multimedia->playMusic(music);
+    ui->listWidget->setCurrentRow(current_index);
+}
+
+
+void framelessWidget::on_pre_pushButton_clicked()
+{
+    //如果播放列表为空，则不执行
+    if(playList.isEmpty())
+    {
+        return;
+    }
+
+    if(current_index==0)
+    {
+        current_index = (playList.size()-current_index-1)%playList.size();
+    }
+    else
+    {
+        current_index = (current_index-1)%playList.size();
+    }
+
+    multimedia->playState = 3;
+    QString music = playList[current_index].toString();
+    multimedia->playMusic(music);
+    ui->listWidget->setCurrentRow(current_index);
+}
 

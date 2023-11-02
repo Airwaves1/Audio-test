@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -50,6 +51,11 @@ public:
     QtMaterialFlatButton *record_pushButton;
     ColorChangingTextEdit *iat_result;
     QTextEdit *iflytek;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_4;
+    QCheckBox *voice1_checkBox;
+    QCheckBox *voice2_checkBox;
+    QCheckBox *voice3_checkBox;
     QWidget *songPage;
     QLabel *label_2;
     QListWidget *listWidget;
@@ -235,6 +241,57 @@ public:
 "    background: none; /* \346\273\232\345\212\250\346\235\241\347\256\255\345\244\264\345\222\214\346\273\232\345\212\250\346\235\241\350\203\214\346\231\257\346\240\267\345\274\217 */\n"
 "}\n"
 ""));
+        verticalLayoutWidget = new QWidget(iflytekPage);
+        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(890, 70, 170, 171));
+        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        voice1_checkBox = new QCheckBox(verticalLayoutWidget);
+        voice1_checkBox->setObjectName(QString::fromUtf8("voice1_checkBox"));
+        voice1_checkBox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    background-color: transparent;\n"
+"    color: #333333;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 20px;\n"
+"    height: 20px;\n"
+"}"));
+
+        verticalLayout_4->addWidget(voice1_checkBox);
+
+        voice2_checkBox = new QCheckBox(verticalLayoutWidget);
+        voice2_checkBox->setObjectName(QString::fromUtf8("voice2_checkBox"));
+        voice2_checkBox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    background-color: transparent;\n"
+"    color: #333333;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 20px;\n"
+"    height: 20px;\n"
+"}"));
+
+        verticalLayout_4->addWidget(voice2_checkBox);
+
+        voice3_checkBox = new QCheckBox(verticalLayoutWidget);
+        voice3_checkBox->setObjectName(QString::fromUtf8("voice3_checkBox"));
+        voice3_checkBox->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"    background-color: transparent;\n"
+"    color: #333333;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 20px;\n"
+"    height: 20px;\n"
+"}"));
+
+        verticalLayout_4->addWidget(voice3_checkBox);
+
         stackedWidget->addWidget(iflytekPage);
         songPage = new QWidget();
         songPage->setObjectName(QString::fromUtf8("songPage"));
@@ -276,7 +333,7 @@ public:
         play_pushButton = new QPushButton(bottom_widget);
         play_pushButton->setObjectName(QString::fromUtf8("play_pushButton"));
         play_pushButton->setGeometry(QRect(440, 30, 60, 50));
-        play_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pause.png);"));
+        play_pushButton->setStyleSheet(QString::fromUtf8(""));
         pre_pushButton = new QPushButton(bottom_widget);
         pre_pushButton->setObjectName(QString::fromUtf8("pre_pushButton"));
         pre_pushButton->setGeometry(QRect(330, 30, 50, 50));
@@ -358,6 +415,9 @@ public:
         stackedWidget->setWhatsThis(QCoreApplication::translate("framelessWidget", "waht", nullptr));
 #endif // QT_CONFIG(whatsthis)
         record_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\214\211\344\275\217\350\257\264\350\257\235", nullptr));
+        voice1_checkBox->setText(QCoreApplication::translate("framelessWidget", "\350\201\206\345\260\217\347\222\207", nullptr));
+        voice2_checkBox->setText(QCoreApplication::translate("framelessWidget", "\345\260\217\345\200\251", nullptr));
+        voice3_checkBox->setText(QCoreApplication::translate("framelessWidget", "\345\260\217\351\241\276", nullptr));
         label_2->setText(QCoreApplication::translate("framelessWidget", "page2", nullptr));
         iflytek_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\230\237\347\201\253", nullptr));
         song_pushButton->setText(QCoreApplication::translate("framelessWidget", "\351\237\263\344\271\220", nullptr));

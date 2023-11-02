@@ -338,6 +338,75 @@ QScrollBar::sub-page:horizontal {
 </string>
                   </property>
                  </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget">
+                  <property name="geometry">
+                   <rect>
+                    <x>890</x>
+                    <y>70</y>
+                    <width>170</width>
+                    <height>171</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <widget class="QCheckBox" name="voice1_checkBox">
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    background-color: transparent;
+    color: #333333;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>聆小璇</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="voice2_checkBox">
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    background-color: transparent;
+    color: #333333;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>小倩</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="voice3_checkBox">
+                     <property name="styleSheet">
+                      <string notr="true">QCheckBox {
+    background-color: transparent;
+    color: #333333;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>小顾</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                 <widget class="QWidget" name="songPage">
                  <widget class="QLabel" name="label_2">
@@ -453,7 +522,7 @@ QPushButton:pressed {
                  </rect>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">image: url(:/resource/image/pause.png);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string/>

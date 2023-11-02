@@ -57,7 +57,12 @@ wave_pcm_hdr default_wav_hdr =
 const char* loginparams = "appid = 1681e85f, work_dir = ."; // 登录参数，appid与msc库绑定,请勿随意改动
 const char* session_begin_params = "sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = gb2312";
 
-const char* session_begin_params2 = "engine_type = cloud, voice_name = x4_lingxiaoyao_em, text_encoding = UTF-8, sample_rate = 16000, speed = 75, volume = 55, pitch = 75, rdn = 3";
+//聆小璇
+const char* session_begin_params2 = "engine_type = cloud, voice_name = x4_lingxiaoyao_em, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
+//小倩
+const char* session_begin_params2_2 = "engine_type = cloud, voice_name = x4_lingxiaoying_em_v2, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
+//小顾
+const char* session_begin_params2_3 = "engine_type = cloud, voice_name =x4_qige, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
 
 
 recognizer::recognizer()
@@ -269,7 +274,22 @@ int recognizer::tts(const char* src_text, QString des_path)
         return ret;
     }
     /* 开始合成 */
-    sessionID = QTTSSessionBegin(session_begin_params2, &ret);
+    const char*session_begin_params_selected;
+    switch (select) {
+        case 0:
+            session_begin_params_selected = session_begin_params2;
+            break;
+        case 1:
+            session_begin_params_selected = session_begin_params2_2;
+            break;
+        case 2:
+            session_begin_params_selected = session_begin_params2_3;
+            break;
+        default:
+            break;
+    }
+
+    sessionID = QTTSSessionBegin(session_begin_params_selected, &ret);
     if (MSP_SUCCESS != ret)
     {
         qDebug("QTTSSessionBegin failed, error code: %d.\n", ret);

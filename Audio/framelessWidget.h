@@ -6,6 +6,8 @@
 #include <QMouseEvent>
 #include <QGraphicsDropShadowEffect>
 #include <QDebug>
+#include<QUrl>
+#include<QList>
 #include"multimedia.h"
 #include"recognizer.h"
 
@@ -39,6 +41,16 @@ private slots:
     void talk_to_spark();
 
     void onProcessFinished(const QString &input, const QString &output);
+
+    void onCheckBoxStateChanged(int state);
+
+    void on_play_pushButton_clicked();
+
+    void onItemDoubleClicked();
+
+    void on_next_pushButton_clicked();
+
+    void on_pre_pushButton_clicked();
 
 signals:
     void recognize_finished();
@@ -87,7 +99,10 @@ private:
 private:
     Multimedia* multimedia; //创建多媒体对象
     recognizer* m_recognizer; //创建语音识别对象
+    int select_voice = 0;
+    int current_index = 0; //当前选中的播放列表索引，表示正在播放的歌曲的索引
 
+    QList<QUrl> playList;
 
 };
 #endif // _FRAMELESSWIDGET_H

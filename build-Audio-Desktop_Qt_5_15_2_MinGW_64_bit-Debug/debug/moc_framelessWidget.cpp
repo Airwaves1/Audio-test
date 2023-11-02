@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_framelessWidget_t {
-    QByteArrayData data[14];
-    char stringdata0[245];
+    QByteArrayData data[20];
+    char stringdata0[374];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,7 +45,13 @@ QT_MOC_LITERAL(9, 193, 6), // "do_tts"
 QT_MOC_LITERAL(10, 200, 13), // "talk_to_spark"
 QT_MOC_LITERAL(11, 214, 17), // "onProcessFinished"
 QT_MOC_LITERAL(12, 232, 5), // "input"
-QT_MOC_LITERAL(13, 238, 6) // "output"
+QT_MOC_LITERAL(13, 238, 6), // "output"
+QT_MOC_LITERAL(14, 245, 22), // "onCheckBoxStateChanged"
+QT_MOC_LITERAL(15, 268, 5), // "state"
+QT_MOC_LITERAL(16, 274, 26), // "on_play_pushButton_clicked"
+QT_MOC_LITERAL(17, 301, 19), // "onItemDoubleClicked"
+QT_MOC_LITERAL(18, 321, 26), // "on_next_pushButton_clicked"
+QT_MOC_LITERAL(19, 348, 25) // "on_pre_pushButton_clicked"
 
     },
     "framelessWidget\0recognize_finished\0\0"
@@ -55,7 +61,10 @@ QT_MOC_LITERAL(13, 238, 6) // "output"
     "on_record_pushButton_pressed\0"
     "on_record_pushButton_released\0do_tts\0"
     "talk_to_spark\0onProcessFinished\0input\0"
-    "output"
+    "output\0onCheckBoxStateChanged\0state\0"
+    "on_play_pushButton_clicked\0"
+    "onItemDoubleClicked\0on_next_pushButton_clicked\0"
+    "on_pre_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,7 +74,7 @@ static const uint qt_meta_data_framelessWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -73,18 +82,23 @@ static const uint qt_meta_data_framelessWidget[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x06 /* Public */,
-       3,    0,   65,    2, 0x06 /* Public */,
+       1,    0,   89,    2, 0x06 /* Public */,
+       3,    0,   90,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   66,    2, 0x08 /* Private */,
-       5,    0,   67,    2, 0x08 /* Private */,
-       6,    0,   68,    2, 0x08 /* Private */,
-       7,    0,   69,    2, 0x08 /* Private */,
-       8,    0,   70,    2, 0x08 /* Private */,
-       9,    0,   71,    2, 0x08 /* Private */,
-      10,    0,   72,    2, 0x08 /* Private */,
-      11,    2,   73,    2, 0x08 /* Private */,
+       4,    0,   91,    2, 0x08 /* Private */,
+       5,    0,   92,    2, 0x08 /* Private */,
+       6,    0,   93,    2, 0x08 /* Private */,
+       7,    0,   94,    2, 0x08 /* Private */,
+       8,    0,   95,    2, 0x08 /* Private */,
+       9,    0,   96,    2, 0x08 /* Private */,
+      10,    0,   97,    2, 0x08 /* Private */,
+      11,    2,   98,    2, 0x08 /* Private */,
+      14,    1,  103,    2, 0x08 /* Private */,
+      16,    0,  106,    2, 0x08 /* Private */,
+      17,    0,  107,    2, 0x08 /* Private */,
+      18,    0,  108,    2, 0x08 /* Private */,
+      19,    0,  109,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -99,6 +113,11 @@ static const uint qt_meta_data_framelessWidget[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,   12,   13,
+    QMetaType::Void, QMetaType::Int,   15,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -119,6 +138,11 @@ void framelessWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 7: _t->do_tts(); break;
         case 8: _t->talk_to_spark(); break;
         case 9: _t->onProcessFinished((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 10: _t->onCheckBoxStateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->on_play_pushButton_clicked(); break;
+        case 12: _t->onItemDoubleClicked(); break;
+        case 13: _t->on_next_pushButton_clicked(); break;
+        case 14: _t->on_pre_pushButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -169,13 +193,13 @@ int framelessWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 15)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 10;
+        _id -= 15;
     }
     return _id;
 }
