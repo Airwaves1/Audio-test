@@ -19,6 +19,7 @@ public:
     void playMusic(const QString& file);
     int playState = 1;
 
+    QMediaPlayer* player;
 
 public slots:
     void startRecord();
@@ -36,7 +37,7 @@ private:
     QAudioInput* audioInput;
 
     QAudioOutput* audioOutput;
-    QMediaPlayer* player;
+
 
 };
 

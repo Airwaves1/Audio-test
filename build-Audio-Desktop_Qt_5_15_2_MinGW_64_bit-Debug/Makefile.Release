@@ -133,10 +133,12 @@ release/qrc_resource.cpp: ../Audio/resource.qrc \
 		../Audio/resource/image/mute.png \
 		../Audio/resource/image/play.png \
 		../Audio/resource/image/volume.png \
+		../Audio/resource/image/VIP.png \
 		../Audio/resource/image/next.png \
 		../Audio/resource/image/search.png \
 		../Audio/resource/image/user.png \
-		../Audio/resource/image/pause.png
+		../Audio/resource/image/pause.png \
+		../Audio/resource/image2/jaychou_1.jpg
 	C:\MyProgram\Qt\5.15.2\mingw81_64\bin\rcc.exe -name resource ..\Audio\resource.qrc -o release\qrc_resource.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -381,6 +383,8 @@ release/moc_framelessWidget.cpp: ../Audio/framelessWidget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QList \
 		../Audio/multimedia.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/QAudioInput \
@@ -405,7 +409,6 @@ release/moc_framelessWidget.cpp: ../Audio/framelessWidget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QString \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/qmetaobject.h \
@@ -1261,6 +1264,8 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QList \
 		../Audio/multimedia.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/QAudioInput \
@@ -1285,7 +1290,6 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QString \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/qmetaobject.h \
@@ -1306,6 +1310,9 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QCheckBox \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qcheckbox.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
@@ -1315,6 +1322,12 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qlineedit.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextcursor.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextformat.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h \
@@ -1334,17 +1347,12 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpacerItem \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QStackedWidget \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qstackedwidget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QTextEdit \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qtextedit.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextdocument.h \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextcursor.h \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qtextformat.h \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		../Audio/colorchangingtextedit.h \
@@ -1363,6 +1371,7 @@ release/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		../Audio/iflytek.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QProcess \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/qprocess.h \
@@ -1505,6 +1514,8 @@ release/main.o: ../Audio/main.cpp ../Audio/widget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QList \
 		../Audio/multimedia.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QObject \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/QAudioInput \
@@ -1529,7 +1540,6 @@ release/main.o: ../Audio/main.cpp ../Audio/widget.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtNetwork/qtnetwork-config.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QSharedDataPointer \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QString \
-		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QUrl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtCore/qmetaobject.h \

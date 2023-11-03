@@ -9,5 +9,7 @@
         <file>resource/image/pre.png</file>
         <file>resource/image/search.png</file>
         <file>resource/image/volume.png</file>
+        <file>resource/image2/jaychou_1.jpg</file>
+        <file>resource/image/VIP.png</file>
     </qresource>
 </RCC>

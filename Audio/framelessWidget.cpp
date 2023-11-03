@@ -66,6 +66,47 @@ framelessWidget::framelessWidget(QWidget *parent)
         ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
     });
 
+    // 获取播放音乐的总时长
+    connect(multimedia->player, &QMediaPlayer::durationChanged, this, [=](qint64 duration) {
+        ui->total_label->setText(QString::asprintf("%02d:%02d", duration / 60000, duration / 1000 % 60));
+        ui->playerSlider->setRange(0, duration);
+    });
+
+    // 拖动滑块改变音乐播放进度
+    connect(ui->playerSlider, &QSlider::sliderPressed, this, [&]() {
+        sliderPressed = true; // 设置标志为true，表示滑块被按下
+    });
+
+    connect(ui->playerSlider, &QSlider::sliderReleased, this, [=]() {
+        sliderPressed = false; // 设置标志为false，表示滑块被释放
+        qint64 pos = ui->playerSlider->value(); // 获取滑块当前位置
+        multimedia->player->setPosition(pos); // 设置音乐播放进度
+    });
+
+    // 获取当前播放音乐的进度
+    connect(multimedia->player, &QMediaPlayer::positionChanged, this, [=](qint64 pos) {
+        if (!sliderPressed) { // 只有在滑块未被按下时才更新滑块的值和标签
+            ui->current_label->setText(QString::asprintf("%02d:%02d", pos / 60000, pos / 1000 % 60));
+            ui->playerSlider->setValue(pos);
+        }
+    });
+
+    ui->volumeSlider->setRange(0, 100); // 设置滑块的范围
+    // 设置滑块的初始值
+    ui->volumeSlider->setValue(40);
+    // 设置音量，拖动滑块改变音量
+    connect(ui->volumeSlider,&QSlider::sliderMoved,this,[=](int value){
+        multimedia->player->setVolume(value);
+    });
+
+    //歌曲播放完后自动播放下一首
+    connect(multimedia->player, &QMediaPlayer::mediaStatusChanged, this, [=](QMediaPlayer::MediaStatus status){
+        if(status == QMediaPlayer::EndOfMedia) {
+            on_next_pushButton_clicked();
+        }
+    });
+
+
 
 }
 
@@ -294,9 +335,15 @@ void framelessWidget::on_iflytek_pushButton_clicked()
 }
 
 
-void framelessWidget::on_song_pushButton_clicked()
+void framelessWidget::on_recommend_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void framelessWidget::on_song_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 
@@ -490,4 +537,8 @@ void framelessWidget::on_pre_pushButton_clicked()
     multimedia->playMusic(music);
     ui->listWidget->setCurrentRow(current_index);
 }
+
+
+
+
 

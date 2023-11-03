@@ -52,6 +52,9 @@ private slots:
 
     void on_pre_pushButton_clicked();
 
+
+    void on_recommend_pushButton_clicked();
+
 signals:
     void recognize_finished();
     void spark_finished();
@@ -101,6 +104,7 @@ private:
     recognizer* m_recognizer; //创建语音识别对象
     int select_voice = 0;
     int current_index = 0; //当前选中的播放列表索引，表示正在播放的歌曲的索引
+    bool sliderPressed = false; // 声明一个标志，用于表示滑块是否被按下
 
     QList<QUrl> playList;
 

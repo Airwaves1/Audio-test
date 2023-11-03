@@ -15,6 +15,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -56,22 +57,31 @@ public:
     QCheckBox *voice1_checkBox;
     QCheckBox *voice2_checkBox;
     QCheckBox *voice3_checkBox;
+    QWidget *page;
     QWidget *songPage;
-    QLabel *label_2;
     QListWidget *listWidget;
     QWidget *left_widget;
     QPushButton *iflytek_pushButton;
     QPushButton *song_pushButton;
+    QPushButton *recommend_pushButton;
     QWidget *bottom_widget;
-    QPushButton *dir_pushButton;
     QPushButton *play_pushButton;
     QPushButton *pre_pushButton;
     QPushButton *next_pushButton;
     QPushButton *volume_pushButton;
-    QtMaterialSlider *horizontalSlider;
-    QtMaterialSlider *horizontalSlider_2;
+    QtMaterialSlider *playerSlider;
+    QtMaterialSlider *volumeSlider;
+    QWidget *widget;
+    QLabel *current_label;
+    QLabel *total_label;
+    QLabel *label_4;
+    QLabel *image_label;
+    QLineEdit *songName;
+    QPushButton *dir_pushButton;
     QWidget *top_widget;
     QPushButton *user_pushButton;
+    QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QWidget *framelessWidget)
     {
@@ -293,14 +303,14 @@ public:
         verticalLayout_4->addWidget(voice3_checkBox);
 
         stackedWidget->addWidget(iflytekPage);
+        page = new QWidget();
+        page->setObjectName(QString::fromUtf8("page"));
+        stackedWidget->addWidget(page);
         songPage = new QWidget();
         songPage->setObjectName(QString::fromUtf8("songPage"));
-        label_2 = new QLabel(songPage);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(310, 180, 54, 16));
         listWidget = new QListWidget(songPage);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(380, 50, 281, 321));
+        listWidget->setGeometry(QRect(80, 30, 1021, 541));
         stackedWidget->addWidget(songPage);
         left_widget = new QWidget(mainDisplayWidget);
         left_widget->setObjectName(QString::fromUtf8("left_widget"));
@@ -308,10 +318,13 @@ public:
         left_widget->setStyleSheet(QString::fromUtf8(""));
         iflytek_pushButton = new QPushButton(left_widget);
         iflytek_pushButton->setObjectName(QString::fromUtf8("iflytek_pushButton"));
-        iflytek_pushButton->setGeometry(QRect(-1, 170, 151, 24));
+        iflytek_pushButton->setGeometry(QRect(0, 100, 151, 24));
         song_pushButton = new QPushButton(left_widget);
         song_pushButton->setObjectName(QString::fromUtf8("song_pushButton"));
-        song_pushButton->setGeometry(QRect(-1, 280, 151, 24));
+        song_pushButton->setGeometry(QRect(0, 160, 151, 24));
+        recommend_pushButton = new QPushButton(left_widget);
+        recommend_pushButton->setObjectName(QString::fromUtf8("recommend_pushButton"));
+        recommend_pushButton->setGeometry(QRect(0, 130, 151, 24));
         bottom_widget = new QWidget(mainDisplayWidget);
         bottom_widget->setObjectName(QString::fromUtf8("bottom_widget"));
         bottom_widget->setGeometry(QRect(150, 690, 1071, 101));
@@ -326,42 +339,61 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: #d5eaf2; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\351\235\236\345\270\270\346\265\205\347\232\204\350\223\235\350\211\262 */\n"
 "}"));
-        dir_pushButton = new QPushButton(bottom_widget);
-        dir_pushButton->setObjectName(QString::fromUtf8("dir_pushButton"));
-        dir_pushButton->setGeometry(QRect(200, 30, 50, 50));
-        dir_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/dir.png);"));
         play_pushButton = new QPushButton(bottom_widget);
         play_pushButton->setObjectName(QString::fromUtf8("play_pushButton"));
-        play_pushButton->setGeometry(QRect(440, 30, 60, 50));
+        play_pushButton->setGeometry(QRect(510, 30, 60, 50));
         play_pushButton->setStyleSheet(QString::fromUtf8(""));
         pre_pushButton = new QPushButton(bottom_widget);
         pre_pushButton->setObjectName(QString::fromUtf8("pre_pushButton"));
-        pre_pushButton->setGeometry(QRect(330, 30, 50, 50));
+        pre_pushButton->setGeometry(QRect(420, 30, 50, 50));
         pre_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/pre.png);"));
         next_pushButton = new QPushButton(bottom_widget);
         next_pushButton->setObjectName(QString::fromUtf8("next_pushButton"));
-        next_pushButton->setGeometry(QRect(550, 30, 50, 50));
+        next_pushButton->setGeometry(QRect(600, 30, 50, 50));
         next_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);"));
         volume_pushButton = new QPushButton(bottom_widget);
         volume_pushButton->setObjectName(QString::fromUtf8("volume_pushButton"));
-        volume_pushButton->setGeometry(QRect(660, 30, 50, 50));
+        volume_pushButton->setGeometry(QRect(730, 38, 35, 35));
         volume_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/next.png);\n"
 "image: url(:/resource/image/volume.png);"));
-        horizontalSlider = new QtMaterialSlider(bottom_widget);
-        horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
-        horizontalSlider->setGeometry(QRect(0, 0, 1061, 31));
-        horizontalSlider->setOrientation(Qt::Horizontal);
-        horizontalSlider_2 = new QtMaterialSlider(bottom_widget);
-        horizontalSlider_2->setObjectName(QString::fromUtf8("horizontalSlider_2"));
-        horizontalSlider_2->setGeometry(QRect(700, 50, 121, 16));
-        horizontalSlider_2->setOrientation(Qt::Horizontal);
+        playerSlider = new QtMaterialSlider(bottom_widget);
+        playerSlider->setObjectName(QString::fromUtf8("playerSlider"));
+        playerSlider->setGeometry(QRect(0, 0, 1061, 31));
+        playerSlider->setOrientation(Qt::Horizontal);
+        volumeSlider = new QtMaterialSlider(bottom_widget);
+        volumeSlider->setObjectName(QString::fromUtf8("volumeSlider"));
+        volumeSlider->setGeometry(QRect(748, 48, 131, 16));
+        volumeSlider->setOrientation(Qt::Horizontal);
+        widget = new QWidget(bottom_widget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(190, 49, 131, 34));
+        current_label = new QLabel(widget);
+        current_label->setObjectName(QString::fromUtf8("current_label"));
+        current_label->setGeometry(QRect(9, 9, 41, 16));
+        total_label = new QLabel(widget);
+        total_label->setObjectName(QString::fromUtf8("total_label"));
+        total_label->setGeometry(QRect(60, 9, 51, 16));
+        label_4 = new QLabel(widget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(50, 9, 16, 16));
+        image_label = new QLabel(bottom_widget);
+        image_label->setObjectName(QString::fromUtf8("image_label"));
+        image_label->setGeometry(QRect(34, 24, 71, 61));
+        image_label->setStyleSheet(QString::fromUtf8("image: url(:/resource/image2/jaychou_1.jpg);"));
+        songName = new QLineEdit(bottom_widget);
+        songName->setObjectName(QString::fromUtf8("songName"));
+        songName->setGeometry(QRect(114, 28, 161, 23));
+        dir_pushButton = new QPushButton(bottom_widget);
+        dir_pushButton->setObjectName(QString::fromUtf8("dir_pushButton"));
+        dir_pushButton->setGeometry(QRect(1000, 30, 50, 50));
+        dir_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/dir.png);"));
         top_widget = new QWidget(mainDisplayWidget);
         top_widget->setObjectName(QString::fromUtf8("top_widget"));
         top_widget->setGeometry(QRect(150, 0, 1071, 71));
-        top_widget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 0);"));
+        top_widget->setStyleSheet(QString::fromUtf8(""));
         user_pushButton = new QPushButton(top_widget);
         user_pushButton->setObjectName(QString::fromUtf8("user_pushButton"));
-        user_pushButton->setGeometry(QRect(20, 10, 50, 50));
+        user_pushButton->setGeometry(QRect(590, 4, 50, 50));
         user_pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	image: url(:/resource/image/user.png);\n"
 "    border-radius: 25px; /* \350\256\276\347\275\256\346\214\211\351\222\256\344\270\272\345\234\206\345\275\242\357\274\214\345\215\212\345\276\204\344\270\272\346\214\211\351\222\256\345\256\275\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
@@ -381,6 +413,16 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: #3498db; /* \346\214\211\344\270\213\346\214\211\351\222\256\346\227\266\347\232\204\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\346\233\264\346\267\261\347\232\204\350\223\235\350\211\262 */\n"
 "}"));
+        label = new QLabel(top_widget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(635, 14, 61, 31));
+        QFont font;
+        font.setPointSize(10);
+        label->setFont(font);
+        label_2 = new QLabel(top_widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(693, 14, 51, 31));
+        label_2->setStyleSheet(QString::fromUtf8("image: url(:/resource/image/VIP.png);"));
 
         mainLayout->addWidget(mainDisplayWidget);
 
@@ -399,7 +441,7 @@ public:
 
         retranslateUi(framelessWidget);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(framelessWidget);
@@ -418,15 +460,22 @@ public:
         voice1_checkBox->setText(QCoreApplication::translate("framelessWidget", "\350\201\206\345\260\217\347\222\207", nullptr));
         voice2_checkBox->setText(QCoreApplication::translate("framelessWidget", "\345\260\217\345\200\251", nullptr));
         voice3_checkBox->setText(QCoreApplication::translate("framelessWidget", "\345\260\217\351\241\276", nullptr));
-        label_2->setText(QCoreApplication::translate("framelessWidget", "page2", nullptr));
         iflytek_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\230\237\347\201\253", nullptr));
         song_pushButton->setText(QCoreApplication::translate("framelessWidget", "\351\237\263\344\271\220", nullptr));
-        dir_pushButton->setText(QString());
+        recommend_pushButton->setText(QCoreApplication::translate("framelessWidget", "\346\216\250\350\215\220", nullptr));
         play_pushButton->setText(QString());
         pre_pushButton->setText(QString());
         next_pushButton->setText(QString());
         volume_pushButton->setText(QString());
+        current_label->setText(QCoreApplication::translate("framelessWidget", "00:00", nullptr));
+        total_label->setText(QCoreApplication::translate("framelessWidget", "00:00", nullptr));
+        label_4->setText(QCoreApplication::translate("framelessWidget", "/", nullptr));
+        image_label->setText(QString());
+        songName->setText(QCoreApplication::translate("framelessWidget", "\351\273\221\350\211\262\346\257\233\350\241\243 -\345\221\250\346\235\260\344\274\246", nullptr));
+        dir_pushButton->setText(QString());
         user_pushButton->setText(QString());
+        label->setText(QCoreApplication::translate("framelessWidget", "Airwave", nullptr));
+        label_2->setText(QString());
     } // retranslateUi
 
 };
