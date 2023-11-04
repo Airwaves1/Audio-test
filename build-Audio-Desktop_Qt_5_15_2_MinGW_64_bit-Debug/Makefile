@@ -256,6 +256,7 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/yacc.prf \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/lex.prf \
 		../Audio/Audio.pro \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Charts.prl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Widgets.prl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Multimedia.prl \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl \
@@ -451,6 +452,7 @@ Makefile: ../Audio/Audio.pro ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/yacc.prf:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/mkspecs/features/lex.prf:
 ../Audio/Audio.pro:
+../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Charts.prl:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Widgets.prl:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Multimedia.prl:
 ../../../../MyProgram/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl:

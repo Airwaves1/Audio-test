@@ -8,8 +8,10 @@
 #include <QDebug>
 #include<QUrl>
 #include<QList>
+#include<QtCharts/QtCharts>
 #include"multimedia.h"
 #include"recognizer.h"
+#include"xyseriesiodevice.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class framelessWidget; }
@@ -22,6 +24,8 @@ class framelessWidget : public QWidget
 public:
     framelessWidget(QWidget *parent = nullptr);
     ~framelessWidget();
+
+    void visualAudio();
 
 private slots:
 
@@ -107,6 +111,14 @@ private:
     bool sliderPressed = false; // 声明一个标志，用于表示滑块是否被按下
 
     QList<QUrl> playList;
+
+
+    //音频可视化
+    XYSeriesIODevice *m_device = nullptr;
+    QChart *m_chart;
+    QLineSeries *m_series ;
+    QAudioInput *m_audioInput = nullptr;
+
 
 };
 #endif // _FRAMELESSWIDGET_H

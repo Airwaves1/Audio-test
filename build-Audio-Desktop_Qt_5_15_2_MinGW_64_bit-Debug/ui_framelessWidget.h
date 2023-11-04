@@ -60,6 +60,7 @@ public:
     QWidget *page;
     QWidget *songPage;
     QListWidget *listWidget;
+    QWidget *visualAudio_widget;
     QWidget *left_widget;
     QPushButton *iflytek_pushButton;
     QPushButton *song_pushButton;
@@ -169,13 +170,13 @@ public:
         main_widget->setStyleSheet(QString::fromUtf8(""));
         stackedWidget = new QStackedWidget(main_widget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(-50, 0, 1121, 621));
+        stackedWidget->setGeometry(QRect(-50, 0, 1121, 551));
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         iflytekPage = new QWidget();
         iflytekPage->setObjectName(QString::fromUtf8("iflytekPage"));
         record_pushButton = new QtMaterialFlatButton(iflytekPage);
         record_pushButton->setObjectName(QString::fromUtf8("record_pushButton"));
-        record_pushButton->setGeometry(QRect(480, 500, 100, 100));
+        record_pushButton->setGeometry(QRect(480, 440, 100, 100));
         record_pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 30px; /* \345\234\206\345\275\242\346\214\211\351\222\256\357\274\214\345\215\212\345\276\204\344\270\272\346\214\211\351\222\256\345\256\275\345\272\246\347\232\204\344\270\200\345\215\212 */\n"
 "    width: 60px; /* \346\214\211\351\222\256\345\256\275\345\272\246 */\n"
@@ -195,10 +196,10 @@ public:
 ""));
         iat_result = new ColorChangingTextEdit(iflytekPage);
         iat_result->setObjectName(QString::fromUtf8("iat_result"));
-        iat_result->setGeometry(QRect(250, 400, 571, 91));
+        iat_result->setGeometry(QRect(250, 340, 571, 91));
         iflytek = new QTextEdit(iflytekPage);
         iflytek->setObjectName(QString::fromUtf8("iflytek"));
-        iflytek->setGeometry(QRect(250, 70, 571, 281));
+        iflytek->setGeometry(QRect(250, 19, 571, 281));
         iflytek->setStyleSheet(QString::fromUtf8("QTextEdit {\n"
 "    background-color: #f7f7f7; /* \350\203\214\346\231\257\351\242\234\350\211\262 */\n"
 "    border: 2px solid #4CAF50; /* \350\276\271\346\241\206 */\n"
@@ -310,12 +311,16 @@ public:
         songPage->setObjectName(QString::fromUtf8("songPage"));
         listWidget = new QListWidget(songPage);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(80, 30, 1021, 541));
+        listWidget->setGeometry(QRect(80, -8, 1021, 521));
+        listWidget->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 255);"));
         stackedWidget->addWidget(songPage);
+        visualAudio_widget = new QWidget(main_widget);
+        visualAudio_widget->setObjectName(QString::fromUtf8("visualAudio_widget"));
+        visualAudio_widget->setGeometry(QRect(0, 500, 1071, 131));
         left_widget = new QWidget(mainDisplayWidget);
         left_widget->setObjectName(QString::fromUtf8("left_widget"));
         left_widget->setGeometry(QRect(0, -30, 151, 821));
-        left_widget->setStyleSheet(QString::fromUtf8(""));
+        left_widget->setStyleSheet(QString::fromUtf8("color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"));
         iflytek_pushButton = new QPushButton(left_widget);
         iflytek_pushButton->setObjectName(QString::fromUtf8("iflytek_pushButton"));
         iflytek_pushButton->setGeometry(QRect(0, 100, 151, 24));

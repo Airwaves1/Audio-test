@@ -106,6 +106,9 @@ framelessWidget::framelessWidget(QWidget *parent)
         }
     });
 
+    //音频可视化
+    visualAudio();
+
 
 
 }
@@ -113,6 +116,67 @@ framelessWidget::framelessWidget(QWidget *parent)
 framelessWidget::~framelessWidget()
 {
     delete ui;
+}
+
+void framelessWidget::visualAudio()
+{
+    //实现频谱图可视化音频
+    const QAudioDeviceInfo inputDevice = QAudioDeviceInfo::defaultInputDevice();
+    if (inputDevice.isNull()) {
+        QMessageBox::warning(nullptr, "audio",
+                             "There is no audio input device available.");
+    }
+    m_chart = new QChart;
+    m_series = new QLineSeries;
+    QChartView *chartView = new QChartView(m_chart);
+    //chartView->setMinimumSize(700, 80);
+    m_chart->addSeries(m_series);
+    QValueAxis *axisX = new QValueAxis;
+    axisX->setRange(0, XYSeriesIODevice::sampleCount);
+    axisX->setLabelFormat("%g");
+    //axisX->setTitleText("Samples");
+    axisX->setVisible(false);  // 隐藏 X 轴
+    QValueAxis *axisY = new QValueAxis;
+    axisY->setRange(-0.5, 0.5);
+    //axisY->setTitleText("Audio level");
+    axisY->setVisible(false);  // 隐藏 X 轴
+    m_chart->addAxis(axisX, Qt::AlignBottom);
+    m_series->attachAxis(axisX);
+    m_chart->addAxis(axisY, Qt::AlignLeft);
+    m_series->attachAxis(axisY);
+    m_chart->legend()->hide();
+    //m_chart->setTitle("Data from the microphone (" + deviceInfo.deviceName() + ')');
+    // 将频谱图显示在顶部
+    QVBoxLayout *mainLayout = new QVBoxLayout(ui->visualAudio_widget);  // 使用垂直布局
+
+    // 设置chartView的大小策略，使其水平和垂直方向上都填充整个父部件
+    chartView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    // 将子部件添加到布局中
+    mainLayout->addWidget(chartView);
+
+    // 设置主窗口的布局管理器
+    ui->visualAudio_widget->setLayout(mainLayout);
+
+
+//    // 调整频谱图的位置
+//    chartView->move(500, 700);
+//    chartView->setFixedSize(900, 90);  // 设置频谱图的固定大小
+
+    QAudioFormat formatAudio;
+    formatAudio.setSampleRate(2000);
+    formatAudio.setChannelCount(1);
+    formatAudio.setSampleSize(8);
+    formatAudio.setCodec("audio/pcm");
+    formatAudio.setByteOrder(QAudioFormat::LittleEndian);
+    formatAudio.setSampleType(QAudioFormat::UnSignedInt);
+
+    m_audioInput = new QAudioInput(inputDevice, formatAudio, this);
+
+    m_device = new XYSeriesIODevice(m_series, this);
+    m_device->open(QIODevice::WriteOnly);
+
+    m_audioInput->start(m_device);
 }
 
 /* 给centralwidget添加一个mainwidget，设置遮罩及遮挡锯齿边缘的board*/

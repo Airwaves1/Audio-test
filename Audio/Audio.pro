@@ -3,7 +3,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 QT += multimedia
-
+QT += charts
 
 CONFIG += c++17
 
@@ -21,11 +21,24 @@ INCLUDEPATH +=$$PWD/libs/include
 # iflytek SDK
 LIBS += $$PWD/iflytek_SDK/libs/msc.lib
 LIBS += $$PWD/iflytek_SDK/libs/msc_x64.lib
-# 加载动态库
+
+# 加载语音识别和语音合成动态库
 LIBS += -L$$PWD/iflytek_SDK/bin -lmsc_x64
-
-
 INCLUDEPATH +=$$PWD/iflytek_SDK/include
+
+#加载语音唤醒的静态库
+LIBS += $$PWD/wakeup_SDK/libs/msc.lib
+LIBS += $$PWD/wakeup_SDK/libs/msc_x64.lib
+
+#加载语音唤醒的动态库
+LIBS += -L$$PWD/wakeup_SDK/bin -lmsc_x64
+INCLUDEPATH +=$$PWD/wakeup_SDK/include
+
+
+#加载傅里叶变换的静态库
+LIBS += $$PWD/fftw3/libs/libfftw3-3.lib
+INCLUDEPATH += $$PWD/fftw3/libs/include
+
 
 
 SOURCES += \
@@ -33,7 +46,9 @@ SOURCES += \
     main.cpp \
     multimedia.cpp \
     recognizer.cpp \
-    widget.cpp
+    wakeup.cpp \
+    widget.cpp \
+    xyseriesiodevice.cpp
 
 HEADERS += \
     colorchangingtextedit.h \
@@ -41,7 +56,9 @@ HEADERS += \
     iflytek.h \
     multimedia.h \
     recognizer.h \
-    widget.h
+    wakeup.h \
+    widget.h \
+    xyseriesiodevice.h
 
 FORMS += \
     framelessWidget.ui \

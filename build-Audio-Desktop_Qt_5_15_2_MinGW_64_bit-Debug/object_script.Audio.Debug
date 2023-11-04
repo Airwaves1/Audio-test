@@ -2,11 +2,15 @@ debug/framelessWidget.o
 debug/main.o
 debug/multimedia.o
 debug/recognizer.o
+debug/wakeup.o
 debug/widget.o
+debug/xyseriesiodevice.o
 debug/qrc_resource.o
 debug/moc_colorchangingtextedit.o
 debug/moc_framelessWidget.o
 debug/moc_iflytek.o
 debug/moc_multimedia.o
 debug/moc_recognizer.o
+debug/moc_wakeup.o
 debug/moc_widget.o
+debug/moc_xyseriesiodevice.o

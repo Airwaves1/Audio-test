@@ -2,11 +2,15 @@ release/framelessWidget.o
 release/main.o
 release/multimedia.o
 release/recognizer.o
+release/wakeup.o
 release/widget.o
+release/xyseriesiodevice.o
 release/qrc_resource.o
 release/moc_colorchangingtextedit.o
 release/moc_framelessWidget.o
 release/moc_iflytek.o
 release/moc_multimedia.o
 release/moc_recognizer.o
+release/moc_wakeup.o
 release/moc_widget.o
+release/moc_xyseriesiodevice.o
