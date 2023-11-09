@@ -59,6 +59,7 @@ private slots:
 
     void on_recommend_pushButton_clicked();
 
+
 signals:
     void recognize_finished();
     void spark_finished();

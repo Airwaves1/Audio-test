@@ -29,6 +29,14 @@ class wakeup : public QObject
     Q_OBJECT
 public:
     explicit wakeup(QObject *parent = nullptr);
+    
+    
+    void sleep_ms(int ms);
+    
+    
+    //
+    int cb_ivw_msg_proc( const char *sessionID, int msg, int param1, int param2, const void *info, void *userData );
+    
 
 signals:
     void wakeup_finished();

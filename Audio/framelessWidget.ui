@@ -413,9 +413,9 @@ QCheckBox::indicator {
                  <widget class="QListWidget" name="listWidget">
                   <property name="geometry">
                    <rect>
-                    <x>80</x>
+                    <x>50</x>
                     <y>-8</y>
-                    <width>1021</width>
+                    <width>1071</width>
                     <height>521</height>
                    </rect>
                   </property>
@@ -429,9 +429,9 @@ QCheckBox::indicator {
                 <property name="geometry">
                  <rect>
                   <x>0</x>
-                  <y>500</y>
+                  <y>520</y>
                   <width>1071</width>
-                  <height>131</height>
+                  <height>111</height>
                  </rect>
                 </property>
                </widget>

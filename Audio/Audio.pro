@@ -47,7 +47,6 @@ SOURCES += \
     multimedia.cpp \
     recognizer.cpp \
     wakeup.cpp \
-    widget.cpp \
     xyseriesiodevice.cpp
 
 HEADERS += \
@@ -57,12 +56,10 @@ HEADERS += \
     multimedia.h \
     recognizer.h \
     wakeup.h \
-    widget.h \
     xyseriesiodevice.h
 
 FORMS += \
-    framelessWidget.ui \
-    widget.ui
+    framelessWidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

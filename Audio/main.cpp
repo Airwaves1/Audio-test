@@ -1,4 +1,4 @@
-#include "widget.h"
+#include "visualaudioThread.h"
 
 #include <QApplication>
 #include"qtmaterialautocomplete.h"

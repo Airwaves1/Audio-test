@@ -33,7 +33,10 @@
 
 XYSeriesIODevice::XYSeriesIODevice(QXYSeries *series, QObject *parent) :
     QIODevice(parent),
-    m_series(series)
+    m_series(series),
+    m_fftInput(fftw_alloc_complex(sampleCount)),
+    m_fftOutput(fftw_alloc_complex(sampleCount)),
+    m_fftPlan(fftw_plan_dft_1d(sampleCount, m_fftInput, m_fftOutput, FFTW_FORWARD, FFTW_ESTIMATE))
 {
     //它初始化了内部的 QXYSeries 对象和数据缓冲区。
 }
@@ -69,3 +72,4 @@ qint64 XYSeriesIODevice::writeData(const char *data, qint64 maxSize)
     m_series->replace(m_buffer);
     return (sampleCount - start) * resolution;
 }
+

@@ -60,6 +60,11 @@ protected:
 private:
     QXYSeries *m_series;
     QVector<QPointF> m_buffer;
+
+    fftw_complex *m_fftInput;
+    fftw_complex *m_fftOutput;
+    fftw_plan m_fftPlan;
+
 };
 
 #endif // XYSERIESIODEVICE_H

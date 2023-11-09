@@ -311,12 +311,12 @@ public:
         songPage->setObjectName(QString::fromUtf8("songPage"));
         listWidget = new QListWidget(songPage);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(80, -8, 1021, 521));
+        listWidget->setGeometry(QRect(50, -8, 1071, 521));
         listWidget->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 255);"));
         stackedWidget->addWidget(songPage);
         visualAudio_widget = new QWidget(main_widget);
         visualAudio_widget->setObjectName(QString::fromUtf8("visualAudio_widget"));
-        visualAudio_widget->setGeometry(QRect(0, 500, 1071, 131));
+        visualAudio_widget->setGeometry(QRect(0, 520, 1071, 111));
         left_widget = new QWidget(mainDisplayWidget);
         left_widget->setObjectName(QString::fromUtf8("left_widget"));
         left_widget->setGeometry(QRect(0, -30, 151, 821));

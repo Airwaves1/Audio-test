@@ -106,8 +106,9 @@ framelessWidget::framelessWidget(QWidget *parent)
         }
     });
 
-    //音频可视化
+//    //音频可视化
     visualAudio();
+
 
 
 
@@ -117,6 +118,7 @@ framelessWidget::~framelessWidget()
 {
     delete ui;
 }
+
 
 void framelessWidget::visualAudio()
 {
@@ -128,35 +130,45 @@ void framelessWidget::visualAudio()
     }
     m_chart = new QChart;
     m_series = new QLineSeries;
+    m_chart->setTheme(QChart::ChartThemeDark);
     QChartView *chartView = new QChartView(m_chart);
-    //chartView->setMinimumSize(700, 80);
+    //chartView->setBackgroundBrush(Qt::transparent);
+    //chartView->setRenderHint(QPainter::Antialiasing);
     m_chart->addSeries(m_series);
     QValueAxis *axisX = new QValueAxis;
     axisX->setRange(0, XYSeriesIODevice::sampleCount);
     axisX->setLabelFormat("%g");
-    //axisX->setTitleText("Samples");
     axisX->setVisible(false);  // 隐藏 X 轴
     QValueAxis *axisY = new QValueAxis;
-    axisY->setRange(-0.5, 0.5);
-    //axisY->setTitleText("Audio level");
+    axisY->setRange(-0.4, 0.4);
     axisY->setVisible(false);  // 隐藏 X 轴
     m_chart->addAxis(axisX, Qt::AlignBottom);
     m_series->attachAxis(axisX);
     m_chart->addAxis(axisY, Qt::AlignLeft);
     m_series->attachAxis(axisY);
     m_chart->legend()->hide();
-    //m_chart->setTitle("Data from the microphone (" + deviceInfo.deviceName() + ')');
-    // 将频谱图显示在顶部
+
+
     QVBoxLayout *mainLayout = new QVBoxLayout(ui->visualAudio_widget);  // 使用垂直布局
 
-    // 设置chartView的大小策略，使其水平和垂直方向上都填充整个父部件
-    chartView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    QHBoxLayout *horizontalLayout = new QHBoxLayout;  // 使用水平布局
 
-    // 将子部件添加到布局中
-    mainLayout->addWidget(chartView);
+    // 创建左侧的空白项，它会占据左侧的空白区域
+    QSpacerItem *leftSpacer = new QSpacerItem(80, 0);
+    horizontalLayout->addSpacerItem(leftSpacer);
+
+    horizontalLayout->addWidget(chartView);  // 将chartView添加到水平布局中
+
+    // 创建右侧的空白项，它会占据右侧的空白区域
+    QSpacerItem *rightSpacer = new QSpacerItem(80, 0);
+    horizontalLayout->addSpacerItem(rightSpacer);
+
+    mainLayout->addLayout(horizontalLayout);  // 将水平布局添加到垂直布局中
 
     // 设置主窗口的布局管理器
     ui->visualAudio_widget->setLayout(mainLayout);
+
+
 
 
 //    // 调整频谱图的位置
@@ -164,7 +176,7 @@ void framelessWidget::visualAudio()
 //    chartView->setFixedSize(900, 90);  // 设置频谱图的固定大小
 
     QAudioFormat formatAudio;
-    formatAudio.setSampleRate(2000);
+    formatAudio.setSampleRate(3000);
     formatAudio.setChannelCount(1);
     formatAudio.setSampleSize(8);
     formatAudio.setCodec("audio/pcm");
