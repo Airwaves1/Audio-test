@@ -9,6 +9,8 @@
 #include<QUrl>
 #include<QList>
 #include<QtCharts/QtCharts>
+
+
 #include"multimedia.h"
 #include"recognizer.h"
 #include"xyseriesiodevice.h"
@@ -56,15 +58,15 @@ private slots:
 
     void on_pre_pushButton_clicked();
 
-
     void on_recommend_pushButton_clicked();
 
+    void testVoice();
+
+    void updateSongName(QString Musicname);
 
 signals:
     void recognize_finished();
     void spark_finished();
-
-
 
 
 private:
@@ -119,6 +121,10 @@ private:
     QChart *m_chart;
     QLineSeries *m_series ;
     QAudioInput *m_audioInput = nullptr;
+
+
+    // 添加一个消息处理函数
+    bool nativeEvent(const QByteArray &eventType, void *message, long *result);
 
 
 };

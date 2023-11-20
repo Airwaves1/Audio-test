@@ -134,17 +134,62 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resource.cpp
 debug/qrc_resource.cpp: ../Audio/resource.qrc \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/bin/rcc.exe \
-		../Audio/resource/image/pre.png \
-		../Audio/resource/image/dir.png \
 		../Audio/resource/image/mute.png \
+		../Audio/resource/image/pause.png \
+		../Audio/resource/image/discord.png \
 		../Audio/resource/image/play.png \
+		../Audio/resource/image/pre.png \
 		../Audio/resource/image/volume.png \
-		../Audio/resource/image/VIP.png \
+		../Audio/resource/image/reddit.png \
+		../Audio/resource/image/1.png \
+		../Audio/resource/image/user.png \
+		../Audio/resource/image/2.png \
+		../Audio/resource/image/dir.png \
+		../Audio/resource/image/3.png \
+		../Audio/resource/image/4.png \
+		../Audio/resource/image/5.png \
 		../Audio/resource/image/next.png \
 		../Audio/resource/image/search.png \
-		../Audio/resource/image/user.png \
-		../Audio/resource/image/pause.png \
-		../Audio/resource/image2/jaychou_1.jpg
+		../Audio/resource/image/snapchat.png \
+		../Audio/resource/image/VIP.png \
+		../Audio/resource/paimeng/2.png \
+		../Audio/resource/paimeng/6.png \
+		../Audio/resource/paimeng/1.png \
+		../Audio/resource/paimeng/5.png \
+		../Audio/resource/paimeng/4.png \
+		../Audio/resource/paimeng/8.png \
+		../Audio/resource/paimeng/3.png \
+		../Audio/resource/paimeng/7.png \
+		../Audio/resource/image2/3-1.png \
+		../Audio/resource/image2/jaychou_1.jpg \
+		../Audio/resource/image2/water.png \
+		../Audio/resource/image2/15-1.png \
+		../Audio/resource/image2/9-1.png \
+		../Audio/resource/image2/14-1.png \
+		../Audio/resource/image2/13-1.png \
+		../Audio/resource/image2/1.png \
+		../Audio/resource/image2/12-1.png \
+		../Audio/resource/image2/2.png \
+		../Audio/resource/image2/twitch.png \
+		../Audio/resource/image2/10.png \
+		../Audio/resource/image2/11-1.png \
+		../Audio/resource/image2/3.png \
+		../Audio/resource/image2/10-1.png \
+		../Audio/resource/image2/11.png \
+		../Audio/resource/image2/4.png \
+		../Audio/resource/image2/12.png \
+		../Audio/resource/image2/5.png \
+		../Audio/resource/image2/8-1.png \
+		../Audio/resource/image2/13.png \
+		../Audio/resource/image2/6.png \
+		../Audio/resource/image2/14.png \
+		../Audio/resource/image2/6-1.png \
+		../Audio/resource/image2/7.png \
+		../Audio/resource/image2/15.png \
+		../Audio/resource/image2/5-1.png \
+		../Audio/resource/image2/8.png \
+		../Audio/resource/image2/9.png \
+		../Audio/resource/image2/17.png
 	C:\MyProgram\Qt\5.15.2\mingw81_64\bin\rcc.exe -name resource ..\Audio\resource.qrc -o debug\qrc_resource.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -2226,6 +2271,7 @@ debug/framelessWidget.o: ../Audio/framelessWidget.cpp ../Audio/framelessWidget.h
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QListWidget \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
+		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QScrollArea \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QSpacerItem \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QStackedWidget \
 		../../../../MyProgram/Qt/5.15.2/mingw81_64/include/QtWidgets/QTextEdit \

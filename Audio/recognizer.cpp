@@ -58,12 +58,11 @@ const char* loginparams = "appid = 1681e85f, work_dir = ."; // 登录参数，ap
 const char* session_begin_params = "sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = gb2312";
 
 //聆小璇
-const char* session_begin_params2 = "engine_type = cloud, voice_name = x4_lingxiaoyao_em, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
+const char* session_begin_params2 = "engine_type = cloud, voice_name = x4_lingxiaowan_en, text_encoding = UTF-8, sample_rate = 16000, speed = 60, volume = 80, pitch = 70, rdn = 3";
 //小倩
-const char* session_begin_params2_2 = "engine_type = cloud, voice_name = x4_lingxiaoying_em_v2, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
+const char* session_begin_params2_2 = "engine_type = cloud, voice_name = x4_yezi, text_encoding = UTF-8, sample_rate = 16000, speed = 60, volume = 80, pitch = 70, rdn = 3";
 //小顾
-const char* session_begin_params2_3 = "engine_type = cloud, voice_name =x4_qige, text_encoding = UTF-8, sample_rate = 16000, speed = 70, volume = 55, pitch = 70, rdn = 3";
-
+const char* session_begin_params2_3 = "engine_type = cloud, voice_name =x4_lingfeichen_assist, text_encoding = UTF-8, sample_rate = 16000, speed = 60, volume = 80, pitch = 70, rdn = 3";
 
 recognizer::recognizer()
 {
@@ -96,7 +95,6 @@ QString recognizer::runIAT(const char* audio_file)
     int				ep_stat = MSP_EP_LOOKING_FOR_SPEECH;		//端点检测
     int				rec_stat = MSP_REC_STATUS_SUCCESS;			//识别状态
     int				errcode = MSP_SUCCESS;
-
 
     QString qString_res;
 

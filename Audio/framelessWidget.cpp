@@ -4,9 +4,11 @@
 #include<QFileDialog>
 #include<QDir>
 #include<QStackedWidget>
+#include <QRegularExpression>
 
 #include <QPixmap>
 #include <QIcon>
+#include<QLabel>
 #include"iflytek.h"
 
 
@@ -15,9 +17,18 @@ framelessWidget::framelessWidget(QWidget *parent)
     , ui(new Ui::framelessWidget)
 {
     ui->setupUi(this);
+
     //ui->mainWidget->setMouseTracking(true); // 允许鼠标跟踪
     //ui->mainDisplayWidget->setMouseTracking(true);
     //setMouseTracking(true);
+
+    //派蒙
+    ui->paimeng_1->hide();
+    //ui->paimeng_2->hide();
+    ui->paimeng_3->hide();
+    ui->paimeng_4->hide();
+    ui->paimeng_5->hide();
+
 
     QTimer *t = new QTimer(this);
     connect(t, &QTimer::timeout, this, [=](){Init();});
@@ -384,12 +395,52 @@ void framelessWidget::controlWindowScale(){
 #endif
 }
 
+
+bool framelessWidget::nativeEvent(const QByteArray &eventType, void *message, long *result)
+{
+    MSG *msg = static_cast<MSG *>(message);
+
+    if (msg->message == WM_USER + 1) {
+        // 处理接收到的消息，你可以在这里执行相应的操作
+        qDebug() << "Received message from C++ program!";
+
+        ui->record_pushButton->setHaloVisible(true);
+
+        QString path = "C:/Code/Qt/Audio/Audio/record/i am here.wav";
+
+        multimedia->play(path);
+
+        ui->paimeng_1->show();
+        ui->paimeng_2->hide();
+        ui->paimeng_3->hide();
+
+        multimedia->startRecord();
+        QTimer::singleShot(3000, this, &framelessWidget::on_record_pushButton_released);
+
+        return true;
+    }
+
+    return false;
+}
+
+void framelessWidget::testVoice()
+{
+    ui->paimeng_4->show();
+    ui->paimeng_1->hide();
+    ui->paimeng_2->hide();
+    ui->paimeng_3->hide();
+    ui->paimeng_5->hide();
+    multimedia->startRecord();
+}
+
+
+
 void framelessWidget::on_dir_pushButton_clicked()
 {
     auto path = QFileDialog::getExistingDirectory(this,"选择文件","C:\\Users\\ly134\\Music");
     //操作该目录下的文件
     QDir dir(path);
-    auto musicList = dir.entryList(QStringList()<<"*.mp3"<<"*.wav",QDir::Files); //获取该目录下的mp3，wav格式的文件
+    auto musicList = dir.entryList(QStringList()<<"*.mp3"<<"*.wav"<<"*.flac",QDir::Files); //获取该目录下的mp3，wav格式的文件
     qInfo()<<musicList;
     ui->listWidget->addItems(musicList);
 
@@ -410,12 +461,10 @@ void framelessWidget::on_iflytek_pushButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-
 void framelessWidget::on_recommend_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
-
 
 void framelessWidget::on_song_pushButton_clicked()
 {
@@ -425,6 +474,11 @@ void framelessWidget::on_song_pushButton_clicked()
 
 void framelessWidget::on_record_pushButton_pressed()
 {
+    ui->paimeng_4->show();
+    ui->paimeng_1->hide();
+    ui->paimeng_2->hide();
+    ui->paimeng_3->hide();
+    ui->paimeng_5->hide();
     ui->record_pushButton->setHaloVisible(true);
     qDebug()<<"start record";
     multimedia->startRecord();
@@ -442,6 +496,120 @@ void framelessWidget::on_record_pushButton_released()
     qDebug() << "识别结果：" << res;
     ui->iat_result->setText(res);
 
+    ui->paimeng_1->hide();
+
+    if(res.contains("下一首"))
+    {
+        qDebug() << "匹配命令成功：下一首";
+        on_next_pushButton_clicked();
+        QString response="好的主人，已经为您切换至下一首音乐";
+        ui->iflytek->setText(response);
+        do_tts();
+        return;
+    }
+    else if(res.contains("上一首"))
+    {
+        qDebug()<<"匹配命令成功，上一首";
+        on_pre_pushButton_clicked();
+        QString response="好的主人，已经为您切换至上一首音乐";
+        ui->iflytek->setText(response);
+        do_tts();
+        return;
+    }
+    else if(res.contains("暂停") || res.contains("停止"))
+    {
+        qDebug()<<"匹配命令成功，暂停";
+
+        on_play_pushButton_clicked();
+        QString response="好的主人，已经为您暂停音乐";
+        ui->iflytek->setText(response);
+        do_tts();
+        return;
+    }
+    else if(res.contains("播放"))
+    {
+        qDebug()<<"匹配命令成功，播放";
+        on_play_pushButton_clicked();
+        QString response="好的主人，已经为您播放音乐";
+        ui->iflytek->setText(response);
+        do_tts();
+        return;
+    }
+
+    else if(res.contains("记事本") && res.contains("hello world"))
+    {
+        // 设置Python脚本文件路径
+        QString pythonScriptPath = "C:/Code/Qt/Audio/Audio/scripts/openTxt.py";
+
+        // 创建QProcess对象
+        QProcess process;
+
+        // 设置执行的命令为python，并传递脚本文件路径作为参数
+        process.start("python", QStringList() << pythonScriptPath);
+
+        // 等待进程完成
+        process.waitForFinished(-1);
+        return;
+    }
+
+    else if(res.contains("记事本") && res.contains("你好啊"))
+    {
+        // 设置Python脚本文件路径
+        QString pythonScriptPath = "C:/Code/Qt/Audio/Audio/scripts/openTxt2.py";
+
+        // 创建QProcess对象
+        QProcess process;
+
+        // 设置执行的命令为python，并传递脚本文件路径作为参数
+        process.start("python", QStringList() << pythonScriptPath);
+
+        // 等待进程完成
+        process.waitForFinished(-1);
+        return;
+    }
+
+    else if(res.contains("网站"))
+    {
+        // 设置Python脚本文件路径
+        QString pythonScriptPath = "C:/Code/Qt/Audio/Audio/scripts/openWeb.py";
+
+        // 创建QProcess对象
+        QProcess process;
+
+        // 设置执行的命令为python，并传递脚本文件路径作为参数
+        process.start("python", QStringList() << pythonScriptPath);
+
+        // 等待进程完成
+        process.waitForFinished(-1);
+        return;
+    }
+
+    else if(res.contains("视频"))
+    {
+        // 设置Python脚本文件路径
+        QString pythonScriptPath = "C:/Code/Qt/Audio/Audio/scripts/openWeb2.py";
+
+        // 创建QProcess对象
+        QProcess process;
+
+        // 设置执行的命令为python，并传递脚本文件路径作为参数
+        process.start("python", QStringList() << pythonScriptPath);
+
+        // 等待进程完成
+        process.waitForFinished(-1);
+        return;
+    }
+
+    else if(res.contains("退出") || res.contains("关闭"))
+    {
+        qDebug()<<"匹配命令成功，退出";
+        QString response="好的主人，已经为您退出";
+        ui->iflytek->setText(response);
+        do_tts();
+        this->close();
+        return;
+    }
+
     emit recognize_finished();
 }
 
@@ -451,18 +619,26 @@ void framelessWidget::do_tts()
 //    QString path = "C:/Code/Qt/Audio/Audio/iflytek_SDK/iflytek_voice.wav";
 //    m_recognizer->tts(&iflytek_result,&path);
 
+    if(ui->iat_result->toPlainText().isEmpty())
+    {
+        qDebug() << "识别结果为空，不进行语音合成！";
+        return;
+    }
+
     QString tts_text = ui->iflytek->toPlainText();
+
+    ui->paimeng_4->show();
+    ui->paimeng_1->hide();
+    ui->paimeng_2->hide();
+    ui->paimeng_3->hide();
+    ui->paimeng_5->hide();
+
     QByteArray utf8Data = tts_text.toLocal8Bit();
     //QTextCodec* codec = QTextCodec::codecForName("GB2312");
     //QByteArray gb2312Data = codec->fromUnicode(utf8Data);
     const char* src_text = utf8Data.constData();
     m_recognizer->select = select_voice;
     int tts_bool = m_recognizer->tts(src_text, "C:/Code/Qt/Audio/Audio/record/iflytek_voice.wav");
-
-    qDebug() << "语音合成内容为！"<< tts_text;
-    qDebug() << "语音合成内容为！"<< tts_text.toStdString().c_str();
-
-    qDebug()<< "语音合成内容为！"<< tts_bool;
     if (tts_bool == 0)
     {
         qDebug() << "语音合成成功！";
@@ -470,10 +646,24 @@ void framelessWidget::do_tts()
     else
     {
         qDebug() << "语音合成失败！";
-    }
 
+    }
+    qDebug() << "语音合成内容为！"<< tts_text;
+    qDebug() << "语音合成内容为！"<< tts_text.toStdString().c_str();
+
+    qDebug()<< "语音合成内容为！"<< tts_bool;
+
+
+
+    qDebug() << "ret"<< tts_bool;
     QString path = "C:/Code/Qt/Audio/Audio/record/iflytek_voice.wav";
     multimedia->play(path);
+    ui->paimeng_4->hide();
+    ui->paimeng_1->hide();
+    ui->paimeng_2->hide();
+    ui->paimeng_3->show();
+    ui->paimeng_5->hide();
+
 }
 
 void framelessWidget::talk_to_spark()
@@ -537,6 +727,7 @@ void framelessWidget::on_play_pushButton_clicked()
 
     //获取选中的音乐资源文件位置
     multimedia->playMusic(music);
+    updateSongName(music);
     qDebug()<<music;
 
     //切换播放按钮的状态
@@ -547,17 +738,14 @@ void framelessWidget::on_play_pushButton_clicked()
         qDebug()<<"play";
         break;
     case 1:
-
         ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
         break;
         qDebug()<<"pause";
 
     case 2:
-
         ui->play_pushButton->setStyleSheet("image: url(:/resource/image/pause.png);");
         break;
         qDebug()<<"pause";
-
     default:
         break;
     }
@@ -573,6 +761,7 @@ void framelessWidget::onItemDoubleClicked()
     multimedia->playState = 3;
 
     multimedia->playMusic(music);
+    updateSongName(music);
 }
 
 
@@ -587,6 +776,7 @@ void framelessWidget::on_next_pushButton_clicked()
     multimedia->playState = 3;
     QString music = playList[current_index].toString();
     multimedia->playMusic(music);
+    updateSongName(music);
     ui->listWidget->setCurrentRow(current_index);
 }
 
@@ -611,9 +801,30 @@ void framelessWidget::on_pre_pushButton_clicked()
     multimedia->playState = 3;
     QString music = playList[current_index].toString();
     multimedia->playMusic(music);
+    updateSongName(music);
     ui->listWidget->setCurrentRow(current_index);
 }
 
+
+void framelessWidget::updateSongName(QString Musicname)
+{
+    // 定义正则表达式，匹配 - 和 . 之间的内容
+    QRegularExpression regex("-([^.]+)\\.");
+
+    // 在字符串中搜索匹配项
+    QRegularExpressionMatch match = regex.match(Musicname);
+
+    // 如果找到匹配项
+    if (match.hasMatch()) {
+        QString result = match.captured(1);
+        qDebug() << "Result: " << result;
+        ui->songName->setText(result);
+    } else {
+        qDebug() << "No match found.";
+    }
+
+
+}
 
 
 

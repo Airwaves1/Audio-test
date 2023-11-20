@@ -11,5 +11,50 @@
         <file>resource/image/volume.png</file>
         <file>resource/image2/jaychou_1.jpg</file>
         <file>resource/image/VIP.png</file>
+        <file>resource/image2/water.png</file>
+        <file>resource/image2/2.png</file>
+        <file>resource/image2/twitch.png</file>
+        <file>resource/image/1.png</file>
+        <file>resource/image/2.png</file>
+        <file>resource/image/3.png</file>
+        <file>resource/image/4.png</file>
+        <file>resource/image/5.png</file>
+        <file>resource/image2/1.png</file>
+        <file>resource/image2/3.png</file>
+        <file>resource/image2/4.png</file>
+        <file>resource/image2/5.png</file>
+        <file>resource/image2/6.png</file>
+        <file>resource/image2/7.png</file>
+        <file>resource/image2/3-1.png</file>
+        <file>resource/image2/5-1.png</file>
+        <file>resource/image2/6-1.png</file>
+        <file>resource/image2/8.png</file>
+        <file>resource/image2/8-1.png</file>
+        <file>resource/image2/9.png</file>
+        <file>resource/image2/9-1.png</file>
+        <file>resource/image2/10.png</file>
+        <file>resource/image2/10-1.png</file>
+        <file>resource/image2/11.png</file>
+        <file>resource/image2/11-1.png</file>
+        <file>resource/image2/12.png</file>
+        <file>resource/image2/12-1.png</file>
+        <file>resource/image2/13.png</file>
+        <file>resource/image2/13-1.png</file>
+        <file>resource/image2/14.png</file>
+        <file>resource/image2/14-1.png</file>
+        <file>resource/image2/15.png</file>
+        <file>resource/image2/15-1.png</file>
+        <file>resource/paimeng/1.png</file>
+        <file>resource/paimeng/2.png</file>
+        <file>resource/paimeng/3.png</file>
+        <file>resource/paimeng/4.png</file>
+        <file>resource/paimeng/5.png</file>
+        <file>resource/paimeng/6.png</file>
+        <file>resource/paimeng/7.png</file>
+        <file>resource/paimeng/8.png</file>
+        <file>resource/image2/17.png</file>
+        <file>resource/image/snapchat.png</file>
+        <file>resource/image/discord.png</file>
+        <file>resource/image/reddit.png</file>
     </qresource>
 </RCC>
